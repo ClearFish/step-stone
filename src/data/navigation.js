@@ -7,49 +7,49 @@
 
 export const navMenu = [
   {
-    label: 'What We Do',
-    to: '/what-we-do',
-    children: [
-      { label: 'Private Equity', to: '/what-we-do/asset-classes/private-equity' },
-      { label: 'Real Estate', to: '/what-we-do/asset-classes/real-estate' },
-      { label: 'Infrastructure', to: '/what-we-do/asset-classes/infrastructure' },
-      { label: 'Private Debt', to: '/what-we-do/asset-classes/private-debt' },
-      { label: 'Fund Investments', to: '/what-we-do/strategies/fund-investments' },
-      { label: 'Secondaries', to: '/what-we-do/strategies/secondaries' },
-      { label: 'Co-Investments', to: '/what-we-do/strategies/co-investments' },
-      { label: 'Direct Investments', to: '/what-we-do/strategies/direct-investments' },
-      { label: 'Advisory Services', to: '/what-we-do/solutions-services/advisory-services' },
-      { label: 'Asset Management', to: '/what-we-do/solutions-services/asset-management' },
-      { label: 'Data Analytics', to: '/what-we-do/solutions-services/data-analytics' },
-      { label: 'Private Wealth Solutions', to: '/what-we-do/solutions-services/private-wealth-solutions' }
-    ]
-  },
-  {
-    label: 'Who We Are',
+    label: '私たちについて',
     to: '/who-we-are',
     children: [
-      { label: 'Our Team', to: '/who-we-are/our-team' },
-      { label: 'Working at StepStone', to: '/who-we-are/working-at-stepstone-culture' },
-      { label: 'Corporate Citizenship', to: '/who-we-are/corporate-citizenship' }
+      { label: 'チーム紹介', to: '/who-we-are/our-team' },
+      { label: 'StepStoneで働く', to: '/who-we-are/working-at-stepstone-culture' },
+      { label: '企業市民活動', to: '/who-we-are/corporate-citizenship' }
     ]
   },
   {
-    label: 'How We Think',
+    label: '私たちの事業',
+    to: '/what-we-do',
+    children: [
+      { label: 'プライベートエクイティ', to: '/what-we-do/asset-classes/private-equity' },
+      { label: '不動産', to: '/what-we-do/asset-classes/real-estate' },
+      { label: 'インフラストラクチャー', to: '/what-we-do/asset-classes/infrastructure' },
+      { label: 'プライベートデット', to: '/what-we-do/asset-classes/private-debt' },
+      { label: 'ファンド投資', to: '/what-we-do/strategies/fund-investments' },
+      { label: 'セカンダリー', to: '/what-we-do/strategies/secondaries' },
+      { label: '共同投資', to: '/what-we-do/strategies/co-investments' },
+      { label: '直接投資', to: '/what-we-do/strategies/direct-investments' },
+      { label: 'アドバイザリーサービス', to: '/what-we-do/solutions-services/advisory-services' },
+      { label: '資産運用', to: '/what-we-do/solutions-services/asset-management' },
+      { label: 'データ分析', to: '/what-we-do/solutions-services/data-analytics' },
+      { label: 'プライベートウェルスソリューション', to: '/what-we-do/solutions-services/private-wealth-solutions' }
+    ]
+  },
+  {
+    label: '私たちの視点',
     to: '/how-we-think',
     children: [
-      { label: 'Podcasts', to: '/how-we-think/podcasts' },
-      { label: 'Videos', to: '/how-we-think/videos' },
-      { label: 'Culture & Community', to: '/how-we-think/culture-community' }
+      { label: 'ポッドキャスト', to: '/how-we-think/podcasts' },
+      { label: '動画', to: '/how-we-think/videos' },
+      { label: 'カルチャーとコミュニティ', to: '/how-we-think/culture-community' }
     ]
   }
 ]
 
 export const topLinks = [
-  { label: 'Private Wealth', to: '/current-opportunities' },
-  { label: 'Investor Tools', to: '/contact-us' },
-  { label: 'Careers', to: '/offices' },
-  { label: 'General Partners', to: '/offices' },
-  { label: 'Shareholders', to: '/shareholders' },
+  { label: 'プライベートウェルス', to: '/current-opportunities' },
+  { label: '投資家向けツール', to: '/contact-us' },
+  { label: '採用情報', to: '/offices' },
+  { label: 'ゼネラルパートナー', to: '/offices' },
+  { label: '株主情報', to: '/shareholders' },
 ]
 
 /*
@@ -58,30 +58,30 @@ export const topLinks = [
  */
 export const megaMenuGroups = [
   {
-    title: 'Asset Classes',
+    title: '資産クラス',
     items: [
-      { label: 'Private Equity', to: '/what-we-do/asset-classes/private-equity' },
-      { label: 'Real Estate', to: '/what-we-do/asset-classes/real-estate' },
-      { label: 'Infrastructure', to: '/what-we-do/asset-classes/infrastructure' },
-      { label: 'Private Debt', to: '/what-we-do/asset-classes/private-debt' }
+      { label: 'プライベートエクイティ', to: '/what-we-do/asset-classes/private-equity' },
+      { label: '不動産', to: '/what-we-do/asset-classes/real-estate' },
+      { label: 'インフラストラクチャー', to: '/what-we-do/asset-classes/infrastructure' },
+      { label: 'プライベートデット', to: '/what-we-do/asset-classes/private-debt' }
     ]
   },
   {
-    title: 'Strategies',
+    title: '戦略',
     items: [
-      { label: 'Fund Investments', to: '/what-we-do/strategies/fund-investments' },
-      { label: 'Secondaries', to: '/what-we-do/strategies/secondaries' },
-      { label: 'Co-Investments', to: '/what-we-do/strategies/co-investments' },
-      { label: 'Direct Investments', to: '/what-we-do/strategies/direct-investments' }
+      { label: 'ファンド投資', to: '/what-we-do/strategies/fund-investments' },
+      { label: 'セカンダリー', to: '/what-we-do/strategies/secondaries' },
+      { label: '共同投資', to: '/what-we-do/strategies/co-investments' },
+      { label: '直接投資', to: '/what-we-do/strategies/direct-investments' }
     ]
   },
   {
-    title: 'Solutions & Services',
+    title: 'ソリューションとサービス',
     items: [
-      { label: 'Advisory Services', to: '/what-we-do/solutions-services/advisory-services' },
-      { label: 'Asset Management', to: '/what-we-do/solutions-services/asset-management' },
-      { label: 'Data Analytics', to: '/what-we-do/solutions-services/data-analytics' },
-      { label: 'Private Wealth Solutions', to: '/what-we-do/solutions-services/private-wealth-solutions' }
+      { label: 'アドバイザリーサービス', to: '/what-we-do/solutions-services/advisory-services' },
+      { label: '資産運用', to: '/what-we-do/solutions-services/asset-management' },
+      { label: 'データ分析', to: '/what-we-do/solutions-services/data-analytics' },
+      { label: 'プライベートウェルスソリューション', to: '/what-we-do/solutions-services/private-wealth-solutions' }
     ]
   }
 ]

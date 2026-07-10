@@ -7,6 +7,7 @@
  */
 import { computed } from 'vue'
 import { footerNav, socialLinks, companyBlurb } from '@/data/footer'
+import Logo from "@/assets/logo.svg"
 
 const currentYear = computed(() => new Date().getFullYear())
 </script>
@@ -16,22 +17,14 @@ const currentYear = computed(() => new Date().getFullYear())
     <div class="footer-top container">
       <!-- 左侧：Logo + 公司简介 -->
       <div class="footer-brand">
-        <router-link to="/" class="footer-logo" aria-label="StepStone home">
-          <span class="logo-mark" aria-hidden="true">
-            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <rect x="2" y="2" width="11" height="11" rx="1" fill="currentColor" />
-              <rect x="15" y="2" width="11" height="11" rx="1" fill="currentColor" opacity="0.55" />
-              <rect x="2" y="15" width="11" height="11" rx="1" fill="currentColor" opacity="0.55" />
-              <rect x="15" y="15" width="11" height="11" rx="1" fill="currentColor" opacity="0.3" />
-            </svg>
-          </span>
-          <span class="logo-text">StepStone</span>
+        <router-link to="/" class="footer-logo" aria-label="StepStone ホーム">
+         <img :src="Logo" alt="">
         </router-link>
         <p class="footer-blurb">{{ companyBlurb }}</p>
       </div>
 
       <!-- 右侧：4 列导航 -->
-      <nav class="footer-nav" aria-label="Footer">
+      <nav class="footer-nav" aria-label="フッターナビゲーション">
         <div class="footer-col" v-for="col in footerNav" :key="col.title">
           <h4 class="footer-col-title">{{ col.title }}</h4>
           <ul class="footer-link-list">
@@ -114,6 +107,7 @@ const currentYear = computed(() => new Date().getFullYear())
   color: #ffffff;
   margin-bottom: var(--space-md);
   transition: opacity 0.2s ease;
+  width: 180px;
 }
 
 .footer-logo:hover {
@@ -224,6 +218,7 @@ const currentYear = computed(() => new Date().getFullYear())
   .footer-top {
     grid-template-columns: 1fr;
     gap: var(--space-xl);
+    padding-top: 20px;
   }
   .footer-brand {
     max-width: none;

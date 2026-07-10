@@ -10,22 +10,27 @@ import { pillars } from '@/data/home'
   <section class="pillars">
     <div class="container pillars-inner">
       <header class="pillars-head">
-        <h2 class="pillars-title">Designed to deliver more</h2>
+        <h2 class="pillars-title">さらなる価値を届けるために設計された組織</h2>
         <p class="pillars-subtitle">
-          We engineered all the interrelated elements of the firm to enable
-          clients to discover, reach and realize more opportunities.
+          私たちは、組織を構成する相互に関連したあらゆる要素を磨き上げ、
+          クライアントがより多くの機会を見出し、到達し、実現できるようにしています。
         </p>
 
         <div class="btn">
-          <router-link to="/what-we-do" class="concact-link">WHAT WE DO</router-link>
+          <router-link to="/what-we-do" class="concact-link">私たちの事業</router-link>
         </div>
       </header>
 
       <div class="pillars-grid">
         <article class="pillar-card" v-for="(p, i) in pillars" :key="i">
-          <span class="pillar-index" aria-hidden="true">0{{ i + 1 }}</span>
-          <h3 class="pillar-card-title">{{ p.title }}</h3>
-          <p class="pillar-card-desc">{{ p.description }}</p>
+          <div class="content">
+            <div class="top_c">
+              <h3 class="pillar-card-title">{{ p.title }}</h3>
+            </div>
+            <div class="btm_c">
+              <p class="pillar-card-desc">{{ p.description }}</p>
+            </div>
+          </div>
         </article>
       </div>
     </div>
@@ -55,6 +60,7 @@ import { pillars } from '@/data/home'
   color: var(--color-primary);
   margin-bottom: var(--space-md);
   letter-spacing: -0.01em;
+  font-family: sans-serif;
 }
 
 .pillars-subtitle {
@@ -65,21 +71,21 @@ import { pillars } from '@/data/home'
 }
 
 .pillars-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .pillar-card {
+  width: 49%;
+  margin-bottom: 20px;
   position: relative;
   background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-top: 3px solid var(--color-accent);
   padding: var(--space-xl) var(--space-lg) var(--space-lg);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.3s ease, border-color 0.3s ease;
+  box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .pillar-card:hover {
@@ -98,19 +104,22 @@ import { pillars } from '@/data/home'
 }
 
 .pillar-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.3125rem;
-  font-weight: 700;
+  font-size: 32px;
   line-height: 1.3;
-  color: var(--color-primary);
+  font-weight: normal;
+  font-family: sans-serif;
+  color: #daff96;
+  padding-top: 100px;
+  padding-left: 20px;
   margin-bottom: var(--space-md);
 }
 
 .pillar-card-desc {
-  font-size: 0.9375rem;
+  font-size: 16px;
   line-height: 1.65;
-  color: var(--color-text-light);
+  color: #445460;
   margin-bottom: 0;
+  font-weight: 500;
 }
 
 /* ===== 平板：两列 ===== */
@@ -157,6 +166,68 @@ import { pillars } from '@/data/home'
       color: #445460;
       &::after {
         background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 14 14'%3E%3Cpath fill='%23445460' d='M5.596 1.838a.619.619 0 0 0-.235.498c0 .205.088.38.235.498l3.515 3.37H.703a.707.707 0 0 0-.498.204.686.686 0 0 0-.205.498v.938c0 .205.059.38.205.498.117.146.293.205.498.205h8.408l-3.515 3.369c-.147.146-.235.322-.235.498 0 .205.059.38.235.498l.644.645c.117.146.293.205.498.205a.686.686 0 0 0 .498-.205l5.684-5.684a.707.707 0 0 0 .205-.498c0-.176-.088-.352-.205-.498L7.236 1.193c-.146-.117-.322-.205-.498-.205a.707.707 0 0 0-.498.205l-.644.645Z'/%3E%3C/svg%3E");
+      }
+    }
+  }
+}
+.pillar-card {
+  height: 440px;
+  background: url("@/assets/pillars/access.jpg") no-repeat center;
+  background-size: 100% 100%;
+  padding: 0;
+  &:nth-child(2) {
+    background-image: url("@/assets/pillars/insight.jpeg");
+  }
+   &:nth-child(3) {
+    background-image: url("@/assets/pillars/expertise.jpg");
+  }
+   &:nth-child(4) {
+    background-image: url("@/assets/pillars/partnership.jpg");
+  }
+  .content {
+    padding-left: 230px;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    .top_c {
+      width: 100%;
+      height: 208px;
+      background: #191f23cc;
+    }
+    .btm_c {
+      background: #f2eff1;
+      width: 100%;
+      flex: 1;
+      padding: 30px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 14px;
+        background: #daff96;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+@media (max-width: 767px) {
+  .pillars-grid {
+    flex-direction: column;
+    .pillar-card {
+      width: 100%;
+      height: 400px;
+      .content {
+        padding-left: 0;
+        padding-top: 100px;
+        .top_c {
+          .pillar-card-title {
+            padding-top: 20px;
+            font-size: 18px;
+          }
+        }
       }
     }
   }

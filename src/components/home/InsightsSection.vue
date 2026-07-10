@@ -5,16 +5,20 @@
  */
 import { ref, computed } from 'vue'
 import { insights } from '@/data/home'
+import { Navigation, Pagination } from 'swiper/modules'
+import { Swiper, SwiperSlide } from 'swiper/vue'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
+import bg1 from "@/assets/insight/bg1.png"
+import bg2 from "@/assets/insight/bg2.png"
+import bg3 from "@/assets/insight/bg3.png"
+import bg4 from "@/assets/insight/bg4.png"
+import bg5 from "@/assets/insight/bg5.png"
+import bg6 from "@/assets/insight/bg6.jpg"
+import bg7 from "@/assets/insight/bg7.png"
 
-/* Tab 列表：All + 各分类 */
-const tabs = [
-  'All',
-  'Industry updates',
-  'Market insights',
-  'Regulatory and compliance',
-  'How we think',
-  'Whitepapers'
-]
+
 
 const activeTab = ref('All')
 
@@ -22,272 +26,197 @@ const filteredInsights = computed(() => {
   if (activeTab.value === 'All') return insights
   return insights.filter((item) => item.category === activeTab.value)
 })
+const slides = ref([
+  {
+    title: '市場調査',
+    desc: '見出しのその先へ: ドイツのプライベートエクイティ',
+    img: bg1
+  },
+  {
+    title: '企業ニュース',
+    desc: 'StepStone Group、米国の新たな確定拠出年金事業を率いる責任者として Taylor Benson を採用',
+    img: bg2
+  },
+  {
+    title: '市場調査',
+    desc: 'スペシャルティクレジット入門',
+    img: bg3
+  },
+  {
+    title: '企業ニュース',
+    desc: 'StepStone、LSEG の Digital Markets Infrastructure（DMI）上で Evergreen 戦略を開始',
+    img: bg4
+  },
+  {
+    title: '市場調査',
+    desc: 'RPM 第59回 | 希少性、専門性、承継から読み解く英国プライベートエクイティの優位性',
+    img: bg5
+  },
+  {
+    title: 'ポッドキャスト',
+    desc: 'プライベートマーケットへの配分を実行するための実践的フレームワーク',
+    img: bg6
+  },
+  {
+    title: '市場調査',
+    desc: 'AI時代のベンチャーキャピタル: 巨人と GPU の肩の上に立つ',
+    img: bg7
+  },
+])
+
+const swiperModules = [Navigation, Pagination]
+const isMobile = ref(window.innerWidth <= 767)
 </script>
 
 <template>
   <section class="insights">
-    <div class="container insights-inner">
-      <header class="insights-head">
-        <h2 class="insights-title">Developments defining our world</h2>
-      </header>
-
-      <!-- 分类 Tab 栏 -->
-      <div class="tabs" role="tablist" aria-label="Insights categories">
-        <button
-          v-for="tab in tabs"
-          :key="tab"
-          class="tab"
-          :class="{ active: activeTab === tab }"
-          role="tab"
-          :aria-selected="activeTab === tab"
-          @click="activeTab = tab"
-        >
-          {{ tab }}
-        </button>
-      </div>
-
-      <!-- 卡片网格 -->
-      <transition name="grid-fade" mode="out-in">
-        <div v-if="filteredInsights.length" class="insights-grid" :key="activeTab">
-          <a
-            v-for="(item, i) in filteredInsights"
-            :key="i"
-            :href="item.link"
-            class="insight-card"
-            target="_blank"
-            rel="noopener noreferrer"
+    <div class="left">
+      <p class="title">世界を形づくる変化</p>
+      <ul>
+        <li>業界アップデート</li>
+        <li>市場調査</li>
+        <li>規制・コンプライアンス</li>
+      </ul>
+      <router-link to="/how-we-think" class="concact-link">私たちの視点</router-link>
+    </div>
+    <div class="right">
+        <Swiper 
+          class="swiper-container" 
+          :modules="swiperModules"
+          direction="horizontal"
+          :slides-per-view="isMobile ? 1 : 3"
+          :space-between="isMobile ? 0 : 30"
           >
-            <div class="insight-media">
-              <img :src="item.image" :alt="item.title" loading="lazy" />
+          <SwiperSlide v-for="(slide, i) in slides" :key="i">
+            <div class="content">
+              <img :src="slide.img" alt=""> 
+              <div class="top_c">
+                <h3 class="insight-card-title">{{ slide.title }}</h3>
+              </div>
+              <div class="btm_c">
+                <p class="insight-card-desc">{{ slide.desc }}</p>
+              </div>
             </div>
-            <div class="insight-body">
-              <span class="insight-category">{{ item.category }}</span>
-              <h3 class="insight-card-title">{{ item.title }}</h3>
-              <span class="insight-readmore">
-                Read more
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </span>
-            </div>
-          </a>
-        </div>
-        <p v-else class="insights-empty" :key="`empty-${activeTab}`">
-          No articles in this category yet. Please check back soon.
-        </p>
-      </transition>
+          </SwiperSlide>
+        </Swiper>
     </div>
   </section>
 </template>
-
-<style scoped>
+<style lang="scss" scoped>
 .insights {
-  background: var(--color-bg);
-  padding: var(--space-3xl) 0;
-}
-
-.insights-inner {
-  max-width: var(--container-max);
-}
-
-.insights-head {
-  margin-bottom: var(--space-xl);
-}
-
-.insights-title {
-  font-family: var(--font-serif);
-  font-size: clamp(1.875rem, 4vw, 2.75rem);
-  font-weight: 700;
-  color: var(--color-primary);
-  letter-spacing: -0.01em;
-}
-
-/* ===== Tab 栏 ===== */
-.tabs {
+  padding: 30px 0;
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--space-xs) var(--space-md);
-  padding-bottom: var(--space-lg);
-  margin-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--color-border);
-}
-
-.tab {
-  position: relative;
-  padding: 8px 2px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-text-light);
-  white-space: nowrap;
-  transition: color 0.2s ease;
-}
-
-.tab::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.25s ease;
-}
-
-.tab:hover {
-  color: var(--color-primary);
-}
-
-.tab.active {
-  color: var(--color-primary);
-  font-weight: 600;
-}
-
-.tab.active::after {
-  transform: scaleX(1);
-}
-
-/* ===== 卡片网格 ===== */
-.insights-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-xl) var(--space-lg);
-}
-
-.insight-card {
-  display: flex;
-  flex-direction: column;
-  background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  color: inherit;
-  overflow: hidden;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-    box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.insight-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 18px 40px rgba(15, 26, 38, 0.12);
-  border-color: transparent;
-  color: inherit;
-}
-
-.insight-media {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: var(--color-bg-alt);
-}
-
-.insight-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-.insight-card:hover .insight-media img {
-  transform: scale(1.06);
-}
-
-.insight-body {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: var(--space-md) var(--space-md) var(--space-lg);
-}
-
-.insight-category {
-  font-family: var(--font-sans);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--color-accent);
-  margin-bottom: var(--space-sm);
-}
-
-.insight-card-title {
-  font-family: var(--font-serif);
-  font-size: 1.125rem;
-  font-weight: 700;
-  line-height: 1.35;
-  color: var(--color-primary);
-  margin-bottom: var(--space-md);
-  transition: color 0.2s ease;
-}
-
-.insight-card:hover .insight-card-title {
-  color: var(--color-accent);
-}
-
-.insight-readmore {
-  display: inline-flex;
   align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: var(--color-accent);
-}
-
-.insight-readmore svg {
-  transition: transform 0.25s ease;
-}
-
-.insight-card:hover .insight-readmore svg {
-  transform: translateX(3px);
-}
-
-.insights-empty {
-  padding: var(--space-2xl) 0;
-  text-align: center;
-  color: var(--color-text-light);
-  font-size: 0.9375rem;
-}
-
-/* ===== 网格切换过渡 ===== */
-.grid-fade-enter-active,
-.grid-fade-leave-active {
-  transition: opacity 0.25s ease;
-}
-.grid-fade-enter-from,
-.grid-fade-leave-to {
-  opacity: 0;
-}
-
-/* ===== 平板：两列 ===== */
-@media (max-width: 1023px) {
-  .insights {
-    padding: var(--space-2xl) 0;
+  margin-bottom: 30px;
+  min-height: 500px;
+  background-image: linear-gradient(90deg, #2f3a42 0, #2f3a42 50%, #fff 0, #fff);
+  padding-left: calc(100% - 1700px);
+  .left {
+    padding-left: 48px;
+    padding-right: 48px;
+    width: 580px;
+    flex-shrink: 0;
+    .title {
+      font-size: 30px;
+      font-weight: normal;
+      color:#daff96;
+      margin-bottom: 24px;
+    }
+    ul {
+      li {
+        position: relative;
+        color: #fff;
+        font-size: 20px;
+        margin-bottom: 24px;
+        padding-left: 30px;
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 16px;
+          height: 12px;
+          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='none'%3E%3Cpath fill='%23fff' d='M13.594.625 5.375 8.844l-3-3.031c-.156-.125-.406-.125-.531 0l-.907.906c-.125.125-.125.375 0 .531l4.188 4.156a.36.36 0 0 0 .531 0l9.375-9.375c.125-.125.125-.375 0-.531l-.906-.875c-.125-.156-.375-.156-.531 0Z'/%3E%3C/svg%3E");
+        }
+      }
+    }
+    .concact-link {
+        width: 160px;
+        height: 48px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        font-weight: 500;
+        color: #445460;
+        background: #daff96;
+        border-radius: 4px;
+        margin-top: 30px;
+        &:hover{
+          background: #445460;
+          color: #fff;
+        }
+      }
   }
-  .insights-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-lg);
+  .right {
+    flex: 1;
+    .swiper-container {
+      width: 100%;
+      height: 400px;
+      .swiper-slide {
+        width: 416px !important;
+        height: 100%;
+        background: #f2eff1;
+        cursor: pointer;
+        .top_c {
+          padding: 20px;
+          box-sizing: border-box;
+          h3 {
+            padding: 8px 12px;
+            background: #00b289;
+            color: #fff;
+            width: fit-content;
+            font-size: 18px;
+            &:hover {
+              background: #445460;
+            }
+          }
+        }
+        .btm_c {
+          padding: 0 20px;
+          box-sizing: border-box;
+          p {
+            font-size: 16px;
+            color: #445460;
+            font-weight: 600;
+            &:hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
   }
 }
-
-/* ===== 移动：单列，Tab 横向滚动 ===== */
 @media (max-width: 767px) {
-  .tabs {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    gap: var(--space-md);
-    padding-bottom: var(--space-md);
-    margin-left: -16px;
-    margin-right: -16px;
-    padding-left: 16px;
-    padding-right: 16px;
-    scrollbar-width: none;
-  }
-  .tabs::-webkit-scrollbar {
-    display: none;
-  }
-  .insights-grid {
-    grid-template-columns: 1fr;
+  .insights {
+    background: #2f3a42 ;
+    flex-direction: column;
+    .left {
+      width: 100%;
+    }
+    .right {
+      width: 100%;
+      margin-top: 20px;
+      padding: 0 30px;
+      .swiper-container {
+        height: 360px;
+        .swiper-slide {
+          width: 100% !important;
+        }
+      }
+    }
   }
 }
 </style>

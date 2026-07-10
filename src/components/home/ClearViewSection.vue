@@ -9,20 +9,18 @@
   <section class="clear-view">
     <div class="clear-view-deco" aria-hidden="true"></div>
     <div class="container clear-view-inner">
-      <span class="clear-view-eyebrow">Perspectives</span>
-      <h2 class="clear-view-title">An uncommonly clear view</h2>
+      <h2 class="clear-view-title">比類のないクリアな視点</h2>
       <p class="clear-view-body">
-        From our distinctive position in the private markets, we see all the
-        influences and factors that define and reflect our world. We curate and
-        clarify the latest news, patterns, perceptions, and perspectives to help
-        make sense of it all.
+        プライベートマーケットにおける独自の立ち位置から、私たちは世界を形づくり、
+        映し出しているあらゆる影響や要因を見つめています。最新のニュース、潮流、
+        認識、視点を整理し、明確にすることで、その全体像を理解しやすくします。
       </p>
-      <router-link to="/how-we-think" class="clear-view-cta">
+      <!-- <router-link to="/how-we-think" class="clear-view-cta">
         Explore insights
         <svg class="cta-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
           <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
         </svg>
-      </router-link>
+      </router-link> -->
     </div>
   </section>
 </template>
@@ -30,9 +28,9 @@
 <style scoped>
 .clear-view {
   position: relative;
-  background: var(--color-primary);
-  color: #ffffff;
-  padding: var(--space-3xl) 0;
+  /* background: var(--color-primary); */
+  color: #445460;
+  padding-top: var(--space-3xl);
   overflow: hidden;
 }
 
@@ -43,11 +41,11 @@
   right: -10%;
   width: 60%;
   height: 180%;
-  background: radial-gradient(
+  /* background: radial-gradient(
     circle at center,
     rgba(0, 102, 179, 0.28) 0%,
     rgba(0, 102, 179, 0) 60%
-  );
+  ); */
   pointer-events: none;
 }
 
@@ -73,7 +71,7 @@
   font-family: var(--font-serif);
   font-size: clamp(1.875rem, 4.5vw, 3rem);
   font-weight: 700;
-  color: #ffffff;
+  color: #445460;
   line-height: 1.15;
   letter-spacing: -0.01em;
   margin-bottom: var(--space-lg);
@@ -82,7 +80,7 @@
 .clear-view-body {
   font-size: 1.0625rem;
   line-height: 1.7;
-  color: rgba(255, 255, 255, 0.82);
+  color: #445460;
   margin-bottom: var(--space-xl);
 }
 

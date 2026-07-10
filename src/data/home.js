@@ -9,48 +9,49 @@
 export const stats = [
   {
     value: '$771B',
-    label: 'Total capital responsibility',
-    note: 'As of 9/30/2025',
-    description: 'Currently entrusted with $209B assets under management.'
+    label: '受託資本総額',
+    note: '2025年9月30日時点',
+    description: '現在、2,090億ドルの運用資産を受託しています。'
   },
   {
     value: '31',
-    label: 'Offices worldwide',
+    label: 'グローバル拠点数',
     note: '',
     description:
-      'Comprehensive coverage and a local point of view of all the markets that matter most to our clients.'
+      'クライアントにとって特に重要な市場を、包括的なカバレッジと現地視点で捉えます。'
   },
   {
     value: '1,240+',
-    label: 'Empowered experts',
-    note: 'As of 9/30/2025',
+    label: '専門人材',
+    note: '2025年9月30日時点',
     description:
-      "We're curious, collaborative and constantly looking to create informed, innovative solutions."
+      '私たちは好奇心と協働精神を持ち、常に深い知見に基づく革新的なソリューションの創出を追求しています。'
   }
 ]
 
 export const pillars = [
   {
-    title: 'Access: go anywhere, do anything',
+    title: 'アクセス: あらゆる市場へ、あらゆる可能性へ',
     description:
-      "We're in every sector, strategy, and territory, right where the brightest ideas are generated, offering more options, more customized solutions, more ways to tap into all the possibilities."
+      '私たちはあらゆるセクター、戦略、地域に存在し、優れたアイデアが生まれる最前線に身を置いています。より多くの選択肢、より高度なカスタマイズ、そして可能性を引き出す多様な手段を提供します。'
   },
   {
-    title: 'Insight: look deeper, go farther',
+    title: 'インサイト: より深く見て、より遠くへ',
     description:
-      'Our focus on data captures a wealth of intelligence across the private markets; these insights provide views both panoramic and precise — informing clearer paths and more confident decisions.'
+      '私たちのデータ重視の姿勢は、プライベートマーケット全体にわたる豊富な知見を捉えます。そのインサイトは、全体像と精緻さを兼ね備えた視点を提供し、より明確な進路と確信ある意思決定を支えます。'
   },
   {
-    title: 'Expertise: identify, initiate, innovate',
+    title: '専門性: 見極め、始動し、革新する',
     description:
-      'Our professionals are empowered with the resources and support they need to act swiftly and decisively, tapping into deep expertise and specialization to create the best possible strategies and solutions.'
+      '私たちのプロフェッショナルは、迅速かつ的確に行動するために必要なリソースと支援を備えています。深い専門知識と特化領域の強みを生かし、最適な戦略とソリューションを生み出します。'
   },
   {
-    title: 'Partnership: share, see, solve together',
+    title: 'パートナーシップ: 共有し、見通し、共に解決する',
     description:
-      'By openly exchanging and combining knowledge and expertise throughout our potent network of investors and general partners, we find and foster new, different ways to address each challenge and opportunity.'
+      '投資家やGPとの強固なネットワーク全体で知識と専門性をオープンに共有し結びつけることで、あらゆる課題と機会に向き合う新たな解決策を見出し、育てていきます。'
   }
 ]
+
 
 export const insights = [
   {

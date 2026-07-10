@@ -7,6 +7,7 @@
 import { ref, computed, watch, onMounted, onUnmounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { navMenu, topLinks, megaMenuGroups } from '@/data/navigation'
+import Logo from "@/assets/logo.svg"
 
 const route = useRoute()
 const router = useRouter()
@@ -88,7 +89,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
       <div class="top_box">
         <div class="top_con container">
           <!-- 桌面端右侧 topLinks -->
-          <nav class="top-links" aria-label="Top links">
+          <nav class="top-links" aria-label="上部リンク">
             <router-link
               v-for="link in topLinks"
               :key="link.to"
@@ -104,16 +105,8 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
       <div class="bottom_box">
         <div class="bottom_co container">
           <!-- Logo -->
-          <router-link to="/" class="logo" aria-label="StepStone home">
-            <span class="logo-mark" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                <rect x="2" y="2" width="11" height="11" rx="1" fill="currentColor" />
-                <rect x="15" y="2" width="11" height="11" rx="1" fill="currentColor" opacity="0.55" />
-                <rect x="2" y="15" width="11" height="11" rx="1" fill="currentColor" opacity="0.55" />
-                <rect x="15" y="15" width="11" height="11" rx="1" fill="currentColor" opacity="0.3" />
-              </svg>
-            </span>
-            <span class="logo-text">STEPSTONE</span>
+          <router-link to="/" class="logo" aria-label="StepStone ホーム">
+           <img :src="Logo" alt="">
           </router-link>
     
           <!-- 桌面端主菜单 -->
@@ -135,7 +128,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
     
                 <!-- What We Do: 三列 mega menu -->
                 <div
-                  v-if="item.label === 'What We Do' && openMegaIndex === i"
+                  v-if="item.label === '私たちの事業' && openMegaIndex === i"
                   class="mega-panel mega-panel--grid"
                 >
                   <div class="mega-col" v-for="group in whatWeDoGroups" :key="group.title">
@@ -174,7 +167,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
               </li>
               <li>
                 <router-link to="/contact" class="concact-link">
-                  Contact us
+                  お問い合わせ
                 </router-link>
               </li>
             </ul>
@@ -182,11 +175,16 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
         </div>
       </div>
       <!-- 移动端汉堡按钮 -->
+    </div>
+    <div class="mobile_con">
+      <router-link to="/" class="logo" aria-label="StepStone ホーム">
+        <img :src="Logo" alt="">
+      </router-link>
       <button
         class="hamburger"
         :class="{ 'is-open': mobileOpen }"
         :aria-expanded="mobileOpen"
-        aria-label="Toggle menu"
+        aria-label="メニューを切り替え"
         @click="toggleMobile"
       >
         <span></span>
@@ -194,7 +192,6 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
         <span></span>
       </button>
     </div>
-
     <!-- 移动端抽屉菜单 -->
     <transition name="drawer-fade">
       <div v-if="mobileOpen" class="mobile-overlay" @click="closeMobile">
@@ -205,7 +202,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
             @click.stop
             role="dialog"
             aria-modal="true"
-            aria-label="Mobile navigation"
+            aria-label="モバイルナビゲーション"
           >
             <div class="drawer-header">
               <router-link to="/" class="logo" @click="closeMobile">
@@ -219,7 +216,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
                 </span>
                 <span class="logo-text">STEPSTONE</span>
               </router-link>
-              <button class="drawer-close" aria-label="Close menu" @click="closeMobile">
+              <button class="drawer-close" aria-label="メニューを閉じる" @click="closeMobile">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                   <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
                 </svg>
@@ -241,7 +238,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
                       v-if="hasChildren(item)"
                       class="drawer-toggle"
                       :class="{ 'is-open': mobileExpanded[item.label] }"
-                      :aria-label="`Toggle ${item.label} submenu`"
+                      :aria-label="`${item.label} のサブメニューを切り替え`"
                       @click="toggleMobileChild(item.label)"
                     >
                       <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -491,7 +488,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
   justify-content: center;
   align-items: center;
   gap: 5px;
-  color: var(--color-primary);
+  color: #daff96;
   border-radius: 4px;
   transition: background 0.2s ease, color 0.2s ease;
 }
@@ -706,17 +703,41 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
   .top-links {
     display: none;
   }
-  .hamburger {
+  .mobile_con {
     display: flex;
   }
   .header-inner {
     justify-content: space-between;
   }
+  .hamburger {
+    display: flex;
+  }
+  .header-inner {
+    display: none;
+  }
+  .mobile_con {
+    /* background: #2f3a42; */
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  .logo {
+    width: 125px;
+    height: 24px;
+  }
 }
 
 @media (min-width: 1024px) {
+  .mobile_con {
+    display: none;
+  }
   .hamburger {
     display: none;
+  }
+  .header-inner {
+    display: block;
   }
 }
 </style>
@@ -739,6 +760,9 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+.logo {
+  width: 180px;
 }
 .concact-link {
   width: 140px;

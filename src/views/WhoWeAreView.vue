@@ -27,11 +27,12 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
         :style="{ backgroundImage: `url(${heroImage})` }"
         aria-hidden="true"
       ></div>
-      <div class="hero-overlay" aria-hidden="true"></div>
+      <!-- <div class="hero-overlay" aria-hidden="true"></div> -->
       <div class="hero-inner container">
-        <p class="hero-eyebrow">Who We Are</p>
-        <h1 class="hero-title">Who We Are</h1>
-        <p class="hero-subtitle">A global private markets investment firm</p>
+        <div class="hero_con">
+          <h1 class="hero-title">私たちについて</h1>
+          <p class="hero-subtitle">Zenith Capital Labは2018年の設立以来、現在まで継続して運営されています。</p>
+        </div>
       </div>
     </section>
 
@@ -40,38 +41,16 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
       <div class="container intro-inner">
         <div class="intro-grid">
           <div class="intro-text">
-            <p class="eyebrow">About StepStone</p>
-            <h2 class="intro-title">Building on a foundation of expertise</h2>
             <div class="intro-body">
               <p>
-                StepStone Group Inc. (Nasdaq: STEP) is a global private markets
-                investment firm founded in 2007 and headquartered in New York.
-                The company focuses on providing customized investment
-                solutions, advisory and data services.
+               「リサーチドリブン」「リスク優先」「長期的価値」を核心理念として一貫して重視しています。
               </p>
               <p>
-                StepStone partners with clients to develop and build private
-                markets portfolios spanning private equity, infrastructure,
-                private debt and real estate asset classes.
+                Zenith Capital Labは2018年の設立以来、日本株式およびデジタル資産市場のリサーチに特化し、データ分析、マクロ経済研究、リスク管理を基盤として、長期的なトラッキング、定量分析およびオンチェーンリサーチを通じて、投資家に対しより専門的かつ客観的で先見性のあるリサーチサポートを提供しています。
               </p>
             </div>
           </div>
-          <div class="intro-media">
-            <img
-              :src="introImage"
-              alt="StepStone New York office"
-              class="intro-img"
-              loading="lazy"
-            />
-          </div>
         </div>
-
-        <ul class="stats">
-          <li class="stat" v-for="(s, i) in stats" :key="i">
-            <span class="stat-value">{{ s.value }}</span>
-            <span class="stat-label">{{ s.label }}</span>
-          </li>
-        </ul>
       </div>
     </section>
 
@@ -79,41 +58,27 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
     <section class="leadership">
       <div class="container leadership-inner">
         <header class="section-head">
-          <p class="eyebrow">Our Team</p>
-          <h2 class="section-title">Our Leadership</h2>
+          <p class="eyebrow">基本概念</p>
         </header>
 
-        <div class="leaders-grid">
-          <article
-            class="leader-card"
-            v-for="(person, i) in leadership"
-            :key="i"
-          >
-            <div class="leader-photo">
-              <img
-                :src="person.image"
-                :alt="person.name"
-                class="leader-img"
-                loading="lazy"
-              />
+       <div class="pillars-grid">
+        <article class="pillar-card" v-for="(p, i) in leadership" :key="i">
+          <div class="content">
+            <div class="top_c">
+              <h3 class="pillar-card-title">{{ p.title }}</h3>
+              <p class="subtitle">{{ p.subtitle }}</p>
             </div>
-            <div class="leader-info">
-              <h3 class="leader-name">{{ person.name }}</h3>
-              <p class="leader-title">{{ person.title }}</p>
+            <div class="btm_c">
+              <p class="pillar-card-desc">{{ p.description }}</p>
             </div>
-          </article>
-        </div>
-
-        <div class="leadership-cta">
-          <RouterLink class="btn btn-outline" to="/who-we-are/our-team">
-            View full team
-          </RouterLink>
-        </div>
+          </div>
+        </article>
+      </div>
       </div>
     </section>
 
     <!-- 4. Culture -->
-    <section class="culture">
+    <!-- <section class="culture">
       <div class="container culture-inner">
         <div class="culture-grid">
           <div class="culture-text">
@@ -134,18 +99,13 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- 5. Corporate Citizenship -->
     <section class="citizenship">
       <div class="container citizenship-inner">
         <header class="section-head">
-          <p class="eyebrow">Our Commitment</p>
-          <h2 class="section-title">Corporate Citizenship</h2>
-          <p class="section-lede">
-            We are committed to responsible investing, diversity and inclusion,
-            and giving back to the communities where we live and work.
-          </p>
+          <p class="eyebrow">コアポジショニング</p>
         </header>
 
         <div class="cit-grid">
@@ -154,16 +114,13 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
             v-for="(item, i) in citizenship"
             :key="i"
           >
-            <span class="cit-index" aria-hidden="true">0{{ i + 1 }}</span>
+          <div class="top_c">
             <h3 class="cit-title">{{ item.title }}</h3>
+          </div>
+          <div class="bottom_c">
             <p class="cit-desc">{{ item.description }}</p>
+          </div>
           </article>
-        </div>
-
-        <div class="citizenship-cta">
-          <RouterLink class="link-arrow" to="/who-we-are/corporate-citizenship">
-            Learn more
-          </RouterLink>
         </div>
       </div>
     </section>
@@ -174,11 +131,11 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
 /* ===== 通用：眉标、标题、按钮 ===== */
 .eyebrow {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size:24px;
+  font-weight: normal;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  color: var(--color-accent);
+  color: #445460;
   margin-bottom: var(--space-md);
 }
 
@@ -272,9 +229,9 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
 .hero {
   position: relative;
   width: 100%;
-  min-height: 50vh;
-  display: flex;
-  align-items: flex-end;
+  min-height: 90vh;
+  /* display: flex;
+  align-items: flex-end; */
   overflow: hidden;
   background: var(--color-primary-dark);
 }
@@ -308,8 +265,13 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
 .hero-inner {
   position: relative;
   z-index: 2;
-  padding-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
   padding-bottom: var(--space-3xl);
+  background: #191f23cc;
+  width: 730px;
+  height: 270px;
+  margin-top:260px;
+  border-radius: 4px;
 }
 
 .hero-eyebrow {
@@ -329,10 +291,10 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
 .hero-title {
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 700;
+  font-weight: normal;
   line-height: 1.05;
   letter-spacing: -0.01em;
-  color: #ffffff;
+  color: #daff96;
   margin-bottom: var(--space-md);
   opacity: 0;
   transform: translateY(24px);
@@ -362,18 +324,17 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
 /* ===== 2. 公司介绍 + 关键数据 ===== */
 .intro {
   background: var(--color-bg);
-  padding: var(--space-3xl) 0;
+  padding: var(--space-2xl) 0;
 }
 
 .intro-inner {
   max-width: var(--container-max);
+  background: #daff96;
+  padding: 30px 10px;
+  border-right: 10px solid #445460;
 }
 
 .intro-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: var(--space-3xl);
-  align-items: center;
 }
 
 .intro-title {
@@ -598,9 +559,6 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
 .cit-card {
   position: relative;
   background: var(--color-bg);
-  border: 1px solid var(--color-border);
-  border-top: 3px solid var(--color-accent);
-  padding: var(--space-xl) var(--space-lg) var(--space-lg);
   display: flex;
   flex-direction: column;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
@@ -688,9 +646,17 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
 
 /* ===== 移动 < 768px ===== */
 @media (max-width: 767px) {
+  .hero {
+    min-height: 80vh;
+  }
   .hero-inner {
     padding-top: var(--space-2xl);
     padding-bottom: var(--space-2xl);
+    width: 90%;
+    margin-top: 300px;
+  }
+  .container  {
+    max-width: 98%;
   }
   .hero-overlay {
     background: linear-gradient(
@@ -720,6 +686,156 @@ const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e15445509993
   }
   .culture-body {
     margin-bottom: var(--space-lg);
+  }
+}
+</style>
+<style lang="scss" scoped>
+.pillars-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.pillar-card {
+  width: 49%;
+  margin-bottom: 20px;
+  position: relative;
+  background: var(--color-bg);
+  padding: var(--space-xl) var(--space-lg) var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+  box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.pillar-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(15, 26, 38, 0.12);
+  border-top-color: var(--color-primary);
+}
+
+.pillar-index {
+  font-family: var(--font-serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-md);
+}
+
+.pillar-card-title {
+  font-size: 32px;
+  line-height: 1.3;
+  font-weight: normal;
+  font-family: sans-serif;
+  color: #daff96;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-bottom: var(--space-md);
+}
+
+.pillar-card-desc {
+  font-size: 16px;
+  line-height: 1.65;
+  color: #445460;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+.pillar-card {
+  height: 440px;
+  background: url("@/assets/pillars/access.jpg") no-repeat center;
+  background-size: 100% 100%;
+  padding: 0;
+  &:nth-child(2) {
+    background-image: url("@/assets/pillars/insight.jpeg");
+  }
+   &:nth-child(3) {
+    background-image: url("@/assets/pillars/expertise.jpg");
+  }
+   &:nth-child(4) {
+    background-image: url("@/assets/pillars/partnership.jpg");
+  }
+  .content {
+    padding-left: 230px;
+    box-sizing: border-box;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    .top_c {
+      width: 100%;
+      height: 208px;
+      background: #191f23cc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .subtitle {
+        font-size: 16px;
+        line-height: 1.65;
+        color: #daff96;
+        margin-bottom: 0;
+        font-weight: 500;
+        padding: 0px 10px;
+      }
+    }
+    .btm_c {
+      background: #f2eff1;
+      width: 100%;
+      flex: 1;
+      padding: 30px;
+      position: relative;
+      &::before {
+        content: "";
+        width: 100%;
+        height: 14px;
+        background: #daff96;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+.cit-grid {
+  .top_c {
+    width:100%;
+    height: 192px;
+    display: flex;
+    align-items: center;
+    background: #191f23cc;
+    h3 {
+      font-size: 20px;
+      text-align: center;
+      color: #daff96;
+      width: 100%;
+    }
+    
+  }
+  .bottom_c {
+      border-top: 16px solid #daff96;
+      height: 208px;
+      background: #f2eff1;
+      padding: 20px;
+      color: #445460;
+      font-weight: 500;
+    }
+}
+@media (max-width: 767px) {
+  .pillars-grid {
+    flex-direction: column;
+    .pillar-card {
+      width: 100%;
+      height: 400px;
+      .content {
+        padding-left: 0;
+        padding-top: 100px;
+        .top_c {
+          .pillar-card-title {
+            padding-top: 20px;
+            font-size: 18px;
+          }
+        }
+      }
+    }
   }
 }
 </style>

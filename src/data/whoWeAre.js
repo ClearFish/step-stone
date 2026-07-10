@@ -6,51 +6,45 @@
 
 export const leadership = [
   {
-    name: 'Scott Hart',
-    title: 'Chief Executive Officer',
-    image: '/images/team/HART_SCOTT-1.png'
+    title: 'データドリブン・リサーチ',
+    subtitle:'「投資よりもリサーチを優先する」という理念を徹底しています',
+    description:
+      '日本株式のリサーチ、オンチェーンデータ分析、機関投資家の資金フロー注視、マクロ経済分析を基盤とし、多角的な視点から市場変化を評価することで、投資判断において客観的かつ信頼性の高い分析根拠を提供します'
   },
   {
-    name: 'Monte M. Brem',
-    title: 'Co-Founder & Executive Chairman',
-    image: '/images/team/BREM_MONTE-1.png'
+    title: 'リスク管理優先',
+    subtitle:'「リスクコントロールは常にリターン追求よりも優先されます',
+    description:
+      '資金管理モデル、ポジションコントロール、市場センチメント分析、リスク評価体系を通じて、投資家が市場変動の影響を最小限に抑え、より安定した資産配分を実現できるよう支援します'
   },
   {
-    name: 'Thomas Keck',
-    title: 'Co-Founder, Head of Research & Portfolio Management',
-    image: '/images/team/KECK_THOMAS-1.png'
+    title: '長期的価値投資',
+    subtitle:'短期的な値動きではなく、長期的な成長に注目しています',
+    description:
+      '日本の優良上場企業および成長潜在力のあるデジタル資産プロジェクトを継続的に研究し、産業トレンド、機関投資家の動向、オンチェーンデータを組み合わせることで、長期的競争力を持つ投資リサーチフレームワークを構築しています'
   },
   {
-    name: 'Jose A. Fernandez',
-    title: 'Co-Founder, Co-COO',
-    image: '/images/team/Fernandez_Jose-2.png'
+    title: 'システム化された分析',
+    subtitle:'体系的なデータ分析フレームワークを構築しています',
+    description:
+      '日本株式市場、デジタル資産市場、オンチェーン資金フロー、市場センチメント、リスク管理モデルを統合し、より体系的で一貫性のある投資リサーチ体系を実現しています'
   },
-  {
-    name: 'Jason P. Ment',
-    title: 'President & Co-COO',
-    image: '/images/team/MENT_JASON-1.png'
-  },
-  {
-    name: 'David Y. Park',
-    title: 'Chief Financial Officer',
-    image: '/images/team/PARK_DAVID-1.png'
-  }
 ]
 
 export const citizenship = [
   {
-    title: 'Responsible Investment',
+    title: '日本株式およびデジタル資産リサーチ',
     description:
-      'We integrate environmental, social and governance considerations into our investment process and stewardship, seeking durable returns and positive outcomes.'
+      '日本の上場企業およびデジタル資産市場に特化し、長期的な成長価値の発掘を継続しています'
   },
   {
-    title: 'Diversity & Inclusion',
+    title: 'データドリブン型リサーチ体制',
     description:
-      'We foster an inclusive workplace and back diverse perspectives across our firm, our investments and the broader private markets community.'
+      'オンチェーンデータ、機関投資家の資金フロー、マクロ経済指標、マーケットセンチメントを統合し、多次元的な投資分析フレームワークを構築しています'
   },
   {
-    title: 'Community Engagement',
+    title: 'リスク管理優先',
     description:
-      'We give back to the communities where we live and work through philanthropy, volunteerism and long-standing local partnerships.'
+      'リスクコントロールを基盤として常に重視し、体系的なリサーチを通じて長期的な資産配分能力の向上を目指しています'
   }
 ]

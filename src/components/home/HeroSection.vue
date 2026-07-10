@@ -18,13 +18,13 @@ defineProps({
     <div class="hero-inner container">
       <div class="hero_con">
         <h1 class="hero-title">
-          <span class="hero-line">Opportunity is everywhere.</span>
-          <span class="hero-line">So are we.</span>
+          <span class="hero-line">機会は、どこにでもある。</span>
+          <span class="hero-line">そして私たちも、そこにいる。</span>
         </h1>
         <p class="hero-subtitle">
-          Worldwide, world-wise: your private markets partner.
+          世界を見渡し、世界を知る。プライベートマーケットにおけるあなたのパートナー。
         </p>
-        <router-link to="/who-we-are" class="concact-link">Who we are</router-link>
+        <router-link to="/who-we-are" class="concact-link">私たちについて</router-link>
       </div>
     </div>
     <div class="hero-scroll" aria-hidden="true">
@@ -80,7 +80,7 @@ defineProps({
 }
 .hero-title {
   color: #daff96;
-  font-size: clamp(2.5rem, 6vw, 4.75rem);
+  font-size: 48px;
   font-weight: 200;
   line-height: 1.08;
   letter-spacing: -0.01em;
@@ -164,8 +164,8 @@ defineProps({
     min-height: 78vh;
   }
   .hero-inner {
-    padding-top: var(--space-xl);
-    padding-bottom: var(--space-xl);
+    /* padding-top: var(--space-xl);
+    padding-bottom: var(--space-xl); */
   }
 }
 
@@ -179,11 +179,15 @@ defineProps({
   .hero-scroll {
     display: none;
   }
+  .hero_con {
+    width: 100%;
+    margin: 0 auto;
+  }
 }
 </style>
 <style lang="scss" scoped>
 .concact-link {
-  width: 140px;
+  width: 160px;
   height: 48px;
   display: flex;
   justify-content: center;
@@ -197,6 +201,20 @@ defineProps({
   &:hover{
     background: #445460;
     color: #fff;
+  }
+}
+@media (max-width: 767px) {
+  .hero-inner {
+    margin-top: 225px;
+    .hero_con {
+      height: 278px;
+      .hero-title {
+        font-size: 20px;
+      }
+      .hero-subtitle {
+        font-size: 14px;
+      }
+    }
   }
 }
 </style>
