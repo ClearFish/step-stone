@@ -36,28 +36,7 @@ defineProps({
       :style="{ backgroundImage: `url(${backgroundImage})` }"
       aria-hidden="true"
     ></div>
-    <div class="page-hero-overlay" aria-hidden="true"></div>
-
     <div class="page-hero-inner container">
-      <nav v-if="breadcrumb.length" class="page-hero-crumbs" aria-label="Breadcrumb">
-        <template v-for="(crumb, i) in breadcrumb" :key="i">
-          <router-link
-            v-if="crumb.to && i < breadcrumb.length - 1"
-            :to="crumb.to"
-            class="page-hero-crumb"
-          >
-            {{ crumb.label }}
-          </router-link>
-          <span v-else class="page-hero-crumb page-hero-crumb--current">{{ crumb.label }}</span>
-          <span
-            v-if="i < breadcrumb.length - 1"
-            class="page-hero-crumb-sep"
-            aria-hidden="true"
-            >/</span
-          >
-        </template>
-      </nav>
-
       <h1 class="page-hero-title">{{ title }}</h1>
       <p v-if="subtitle" class="page-hero-subtitle">{{ subtitle }}</p>
     </div>
@@ -68,9 +47,8 @@ defineProps({
 .page-hero {
   position: relative;
   width: 100%;
-  min-height: 50vh;
+  min-height: 70vh;
   display: flex;
-  align-items: flex-end;
   overflow: hidden;
   background: var(--color-primary);
   background: linear-gradient(120deg, var(--color-primary-dark) 0%, var(--color-primary) 100%);
@@ -98,10 +76,13 @@ defineProps({
 .page-hero-inner {
   position: relative;
   z-index: 2;
-  padding-top: var(--space-3xl);
-  padding-bottom: var(--space-2xl);
-  max-width: var(--container-max);
-  width: 100%;
+  padding-top: var(--space-2xl);
+  padding-bottom: var(--space-3xl);
+  background: #191f23cc;
+  width: 730px;
+  margin-top: 260px;
+  height: 270px;
+  border-radius: 4px;
 }
 
 /* 面包屑 */
@@ -173,13 +154,14 @@ a.page-hero-crumb:hover {
   .page-hero-inner {
     padding-top: var(--space-2xl);
     padding-bottom: var(--space-xl);
+    width: 96%;
   }
 }
 
 /* ===== 移动 ===== */
 @media (max-width: 767px) {
   .page-hero {
-    min-height: 38vh;
+    min-height: 66vh;
   }
   .page-hero-overlay {
     background: linear-gradient(
@@ -192,5 +174,6 @@ a.page-hero-crumb:hover {
     padding-top: var(--space-xl);
     padding-bottom: var(--space-xl);
   }
+
 }
 </style>

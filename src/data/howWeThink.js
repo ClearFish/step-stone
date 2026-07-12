@@ -7,40 +7,40 @@
 export const articles = [
   {
     id: 1,
-    category: 'Whitepapers',
-    title: 'Dual-use technology: Rewriting the rules of engagement',
+    category: '企業ニュース',
+    title: 'デュアルユース技術: エンゲージメントのルールを書き換える',
     date: 'January 14, 2026',
     image: '/images/insights/2026-01-Magnificent-7-across-markets-1.png',
     link: 'https://www.stepstonegroup.com/news-insights/dual-use-technology-rewriting-the-rules-of-engagement/'
   },
   {
     id: 2,
-    category: 'Market insights',
-    title: 'Revisiting the growth equity market opportunity',
+    category: '企業ニュース',
+    title: 'グロース・エクイティ市場の投資機会を再考する',
     date: 'December 2, 2025',
     image: '/images/insights/2021-growth-equity-tnail-387x387-1.png',
     link: 'https://www.stepstonegroup.com/news-insights/revisiting-the-growth-equity-market-opportunity/'
   },
   {
     id: 3,
-    category: 'Whitepapers',
-    title: 'Diversifying your Asia exposure: India private equity',
+    category: 'ポッドキャスト',
+    title: 'アジア・エクスポージャーの分散: インドのプライベート・エクイティ',
     date: 'November 18, 2025',
     image: '/images/insights/20250417-Japan-private-equity-whitepaper-cover-images.png',
     link: 'https://www.stepstonegroup.com/news-insights/diversifying-your-asia-exposure-india-private-equity/'
   },
   {
     id: 4,
-    category: 'Whitepapers',
-    title: 'Implications of Trump 2.0 on the private markets',
+    category: 'ポッドキャスト',
+    title: 'トランプ2.0がプライベート・マーケットに与える影響',
     date: 'October 29, 2025',
-    image: '/images/insights/Latin-america-elections_387x387.jpg',
+    image: '/images/insights/Latin-america-elections_387x387.png',
     link: 'https://www.stepstonegroup.com/news-insights/implications-of-trump-2-0-on-the-private-markets/'
   },
   {
     id: 5,
-    category: 'Market insights',
-    title: 'Trends in corporate direct lending 2H24',
+    category: 'ポッドキャスト',
+    title: '2024年下期におけるコーポレート・ダイレクトレンディングの動向',
     date: 'September 16, 2025',
     image:
       '/images/insights/20240109-PD-snapshot-1_Direct-lending-attractive-risk-adjusted-returns.png',
@@ -48,56 +48,56 @@ export const articles = [
   },
   {
     id: 6,
-    category: 'Industry updates',
-    title: 'StepStone completes fifth PE secondaries program at $7.4B',
+    category: '企業ニュース',
+    title: 'StepStone、74億ドル規模の第5号PEセカンダリー・プログラムを完了',
     date: 'August 21, 2025',
     image: '/images/insights/20200929-SREP-Press-Release-Thumbnail.png',
     link: 'https://www.stepstonegroup.com/news-events/stepstone-group-completes-fifth-private-equity-secondaries-program/'
   },
   {
     id: 7,
-    category: 'Market insights',
-    title: 'Infrastructure co-investment: A growing opportunity',
+    category: '企業ニュース',
+    title: 'インフラ共同投資: 拡大する投資機会',
     date: 'July 8, 2025',
-    image: '/images/insights/20240917-PE-co-invest-whitepaper-1.png',
+    image: '/images/insights/20240917-PE-co-invest-whitepaper-1.jpg',
     link: 'https://www.stepstonegroup.com/news-insights/infrastructure-co-investment-a-growing-opportunity/'
   },
   {
     id: 8,
-    category: 'Whitepapers',
-    title: 'Venture capital secondaries: A record year',
+    category: 'ポッドキャスト',
+    title: 'ベンチャーキャピタル・セカンダリー: 記録的な1年',
     date: 'June 24, 2025',
     image: '/images/insights/2025-2-12-VC-Secondaries-whitepaper-images.png',
     link: 'https://www.stepstonegroup.com/news-insights/venture-capital-secondaries-a-record-year/'
   },
   {
     id: 9,
-    category: 'Regulatory and compliance',
-    title: 'SEC private fund rule implications',
+    category: 'ポッドキャスト',
+    title: 'SECプライベート・ファンド規則の影響',
     date: 'May 13, 2025',
     image: '/images/insights/eu-tax-blog-thumbnail-387x387-1.png',
     link: 'https://www.stepstonegroup.com/news-insights/sec-private-fund-rule-implications/'
   },
   {
     id: 10,
-    category: 'How we think',
-    title: 'The role of private markets in portfolio construction',
+    category: '企業ニュース',
+    title: 'ポートフォリオ構築におけるプライベート・マーケットの役割',
     date: 'April 30, 2025',
-    image: '/images/insights/multi-asset-portfolios-feat.-387x387-1.jpg',
+    image: '/images/insights/multi-asset-portfolios-feat.-387x387-1.png',
     link: 'https://www.stepstonegroup.com/news-insights/the-role-of-private-markets-in-portfolio-construction/'
   },
   {
     id: 11,
-    category: 'Market insights',
-    title: 'Real estate: Navigating a higher-rate environment',
+    category: '企業ニュース',
+    title: '不動産: 高金利環境をどう乗り切るか',
     date: 'March 19, 2025',
     image: '/images/insights/Real-Estate.jpg',
     link: 'https://www.stepstonegroup.com/news-insights/real-estate-navigating-a-higher-rate-environment/'
   },
   {
     id: 12,
-    category: 'Industry updates',
-    title: 'Private wealth: Expanding access to private markets',
+    category: 'ポッドキャスト',
+    title: 'プライベート・ウェルス: プライベート・マーケットへのアクセス拡大',
     date: 'February 11, 2025',
     image: '/images/insights/20240826-Evergreen-funds-whitepaper-2.png',
     link: 'https://www.stepstonegroup.com/news-insights/private-wealth-expanding-access-to-private-markets/'

@@ -22,7 +22,7 @@ const isMobile =  ref(window.innerWidth <= 767)
                 <img :src="human1" alt="">
             </div>
             <div class="left">
-                <p class="name">わたなべ たかし</p>
+                <p class="name">渡辺 隆司</p>
                 <p class="sub_label">Zenith Capital Lab 創設者／チーフストラテジスト／日本伝統金融市場におけるシニアストラテジスト</p>
                 <div class="others">
                     <p class="label">専門分野:</p>
@@ -40,7 +40,7 @@ const isMobile =  ref(window.innerWidth <= 767)
                 <img :src="human2" alt="">
             </div>
             <div class="left">
-                <p class="name">なかむら あいこ</p>
+                <p class="name">中村 愛子</p>
                 <p class="sub_label">市場データの整理／グループ運営／ミーティングの調整・運営 ／ 会員サポート業務 ／ リサーチレポートの編集</p>
                 <div class="others">
                     <p class="label">専門分野:</p>
@@ -54,7 +54,7 @@ const isMobile =  ref(window.innerWidth <= 767)
                 <img :src="human3" alt="">
             </div>
             <div class="left">
-                <p class="name">さとう けんじ</p>
+                <p class="name">佐藤 健司</p>
                 <p class="sub_label">オンチェーンデータ分析部門</p>
                 <div class="others">
                     <p class="label">経歴:</p>
@@ -72,7 +72,7 @@ const isMobile =  ref(window.innerWidth <= 767)
                 <img :src="human4" alt="">
             </div>
             <div class="left">
-                <p class="name">もり ゆき</p>
+                <p class="name">森 由纪</p>
                 <p class="sub_label">マーケットセンチメント研究部門</p>
                 <div class="others">
                     <p class="label">経歴:</p>
@@ -90,7 +90,7 @@ const isMobile =  ref(window.innerWidth <= 767)
                 <img :src="human5" alt="">
             </div>
             <div class="left">
-                <p class="name">たなか ひろし</p>
+                <p class="name">田中 博</p>
                 <p class="sub_label">リスク管理部門</p>
                 <div class="others">
                     <p class="label">経歴:</p>

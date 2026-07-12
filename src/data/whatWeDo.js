@@ -6,36 +6,6 @@
  * image 取自 public/images/ 下真实存在的文件（asset-classes 与 insights 目录）
  */
 
-export const assetClasses = [
-  {
-    title: 'Private Equity',
-    description:
-      'Buyouts, growth capital, and venture capital investments across diverse sectors and stages.',
-    to: '/what-we-do/asset-classes/private-equity',
-    image: '/images/insights/2021-growth-equity-tnail-387x387-1.png'
-  },
-  {
-    title: 'Real Estate',
-    description:
-      'Commercial and residential real estate investments across global markets.',
-    to: '/what-we-do/asset-classes/real-estate',
-    image: '/images/insights/Real-Estate.jpg'
-  },
-  {
-    title: 'Infrastructure',
-    description:
-      'Transport, energy, renewables, and digital infrastructure investments.',
-    to: '/what-we-do/asset-classes/infrastructure',
-    image: '/images/insights/Infra-101_Splash-page_web-version-1.png'
-  },
-  {
-    title: 'Private Debt',
-    description:
-      'Mezzanine, venture debt, and senior loans providing credit solutions.',
-    to: '/what-we-do/asset-classes/private-debt',
-    image: '/images/insights/pd-paper-offering-overview-1.png'
-  }
-]
 
 export const strategies = [
   {

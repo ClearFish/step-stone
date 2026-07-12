@@ -9,14 +9,16 @@
  *   5. Solutions & Services 解决方案（浅灰，四列卡片）
  * 卡片统一样式，移动优先响应式（桌面四列 / 平板两列 / 移动单列）
  */
+import { ref } from 'vue'
 import PageHero from '@/components/common/PageHero.vue'
-import { assetClasses, strategies, solutions } from '@/data/whatWeDo'
+import Icon1 from "@/assets/wedo/icon1.jpg"
+import Icon2 from "@/assets/wedo/icon2.jpg"
+import Icon3 from "@/assets/wedo/icon3.jpg"
 
-/* 面包屑：Home / What We Do */
-const breadcrumb = [
-  { label: 'Home', to: '/' },
-  { label: 'What We Do', to: '/what-we-do' }
-]
+import btm1 from "@/assets/wedo/btm1.png"
+import btm2 from "@/assets/wedo/btm2.png"
+import btm3 from "@/assets/wedo/btm3.png"
+
 
 /* PageHero 背景图取自 asset-classes 目录的真实文件 */
 const heroBackground = '/images/asset-classes/Asset_Classes_Banner_GettyImages-112624706_medium.jpeg'
@@ -24,105 +26,128 @@ const heroBackground = '/images/asset-classes/Asset_Classes_Banner_GettyImages-1
 /* 三个卡片区块统一配置：theme 控制背景（alt=浅灰 / light=白底） */
 const sections = [
   {
-    kicker: 'Asset Classes',
-    title: 'Invest across four core asset classes',
-    items: assetClasses,
-    theme: 'alt'
+    kicker: '資産運用',
+    title: '魅力的な投資機会への卓越したアクセス、深いセクター専門性、そしてあらゆる資産クラスと戦略にまたがる比類のないリーチ。これらの強みを通じて、私たちは真にオーダーメイドのプライベート・マーケット・プログラムとパートナーシップを構築し、付加価値を創出します。',
+    icon: Icon1
   },
   {
-    kicker: 'Strategies',
-    title: 'Four complementary investment strategies',
-    items: strategies,
-    theme: 'light'
+    kicker: 'アドバイザリー・サービス',
+    title: '私たちは各投資ポートフォリオの戦略立案、設計、構築を行い、さまざまな要素や特性についてお客様と緊密に連携しながら、それぞれのお客様固有の目標に適合し、重点を置いたカスタマイズ型のアドバイザリー・ソリューションを提供します。',
+    icon: Icon2,
   },
   {
-    kicker: 'Solutions & Services',
-    title: 'End-to-end solutions and services',
-    items: solutions,
-    theme: 'alt'
+    kicker: 'データとアナリティクス',
+    title: '当社の市場をリードする独自の調査・レポーティング・プラットフォーム「SPI by StepStone」は、案件単位で比類のないパフォーマンス分析とオペレーションに関するインサイトを提供します。これにポートフォリオ・アナリティクス＆レポーティング・チームの知見を組み合わせることで、プライベート・マーケットを鋭く把握し、配分判断、リスク管理、そしてポートフォリオのモニタリングと予測能力を強化します。',
+    icon: Icon3,
   }
 ]
+const btmLists = ref([
+  {
+    btn:'ポッドキャスト',
+    img:btm1,
+    content:'RPM 第61回 | トップ・クオータイルの先へ: ディール単位のベンチマーキングがプライベート・マーケット投資家にもたらす価値'
+  },
+   {
+    btn:'企業ニュース',
+    img:btm2,
+    content:'StepStoneとPitchBook、プライベート・マーケット向けディール単位ベンチマーキング・ソリューションを開始'
+  },
+   {
+    btn:'ポッドキャスト',
+    img:btm3,
+    content:'RPM 第60回 | 変化するベンチャー投資環境: 流動性、選別性、そしてセカンダリー'
+  }
+])
 </script>
 
 <template>
   <div class="what-we-do">
     <!-- 1. PageHero -->
     <PageHero
-      title="What We Do"
-      subtitle="Customized investment solutions across private markets"
+      title="私たちの事業内容"
+      subtitle="プライベート市場全体にわたるカスタマイズされた投資ソリューション"
       :background-image="heroBackground"
-      :breadcrumb="breadcrumb"
     />
 
     <!-- 2. 总览介绍 -->
     <section class="overview">
       <div class="container overview-inner">
-        <span class="overview-kicker" aria-hidden="true">Overview</span>
         <h2 class="overview-title">
-          A comprehensive approach to private markets investing
+          プライベート・マーケット投資への包括的なアプローチ
         </h2>
         <div class="overview-text">
           <p>
-            StepStone brings together deep specialization and global reach to help
-            clients build and manage private markets portfolios. We invest across
-            four core asset classes — private equity, real estate, infrastructure,
-            and private debt — and deploy capital through four complementary
-            strategies: fund investments, secondaries, co-investments, and direct
-            investments.
+            Zenith Capital Labは、高度な専門性とグローバルな展開力を結集し、お客様の
+            プライベート・マーケット・ポートフォリオの構築と運用を支援します。
+            当社は、プライベート・エクイティ、不動産、インフラストラクチャー、
+            プライベート・デットという4つの中核資産クラスに投資し、ファンド投資、
+            セカンダリー投資、共同投資、ダイレクト投資という4つの相互補完的な
+            戦略を通じて資本を配分しています。
           </p>
           <p>
-            Beyond investing, we support clients with advisory services,
-            discretionary asset management, proprietary data and analytics, and
-            private wealth solutions — combining every capability to deliver
-            customized solutions tailored to each client's objectives.
+            投資にとどまらず、当社はアドバイザリー・サービス、裁量型資産運用、
+            独自のデータおよびアナリティクス、ならびにプライベート・ウェルス向け
+            ソリューションを提供しています。あらゆる機能を組み合わせることで、
+            各お客様の目標に合わせたカスタマイズされたソリューションを実現します。
           </p>
         </div>
       </div>
     </section>
 
     <!-- 3-5. 三个卡片区块（统一渲染） -->
-    <section
-      v-for="(section, s) in sections"
-      :key="section.kicker"
-      class="card-section"
-      :class="`card-section--${section.theme}`"
-    >
-      <div class="container card-section-inner">
-        <header class="card-section-head">
-          <span class="card-section-kicker">{{ section.kicker }}</span>
-          <h2 class="card-section-title">{{ section.title }}</h2>
-        </header>
-
-        <div class="card-grid">
-          <router-link
-            v-for="(item, i) in section.items"
-            :key="item.to"
-            :to="item.to"
-            class="card"
-            :style="{ '--card-delay': `${s * 0.05 + i * 0.04}s` }"
-          >
-            <div class="card-media">
-              <img :src="item.image" :alt="item.title" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3 class="card-title">{{ item.title }}</h3>
-              <p class="card-desc">{{ item.description }}</p>
-              <span class="card-link">
-                Learn more
-                <span class="card-arrow" aria-hidden="true">&rarr;</span>
-              </span>
-            </div>
-          </router-link>
+    <div class="car_con">
+      <section
+        v-for="(section, s) in sections"
+        :key="section.kicker"
+        class="card-section"
+        :class="`card-section--${section.theme}`"
+      >
+        <div class="container card-section-inner">
+          <header class="card-section-head">
+            <span class="card-section-kicker">{{ section.kicker }}</span>
+            <h2 class="card-section-title">{{ section.title }}</h2>
+          </header>
+        </div>
+        <img :src="section.icon" alt="" class="icon_bg">
+      </section>
+    </div>
+    <div class="center_con">
+      <p class="main_ttile">市場の可能性をさらに引き出すモデル</p>
+      <div class="content">
+        <div class="left first_left">
+          <div class="word">
+            <p class="title">優れたディールフロー</p>
+            <p class="cont">GPおよびLPのエコシステムにおける当社の中核的な立ち位置と、思慮深く洞察力に富んだアプローチにより、主要なファンド・マネージャーとの強固なパートナーシップが生まれています。これにより、魅力的なファンド投資、共同投資、セカンダリー投資の豊富な機会へ優先的にアクセスできます。この充実したパイプラインを通じて、より選択的に投資機会を追求し、リターンの向上と、マネージャーおよびお客様との関係強化を実現します。</p>
+          </div>
+        </div>
+         <div class="left right">
+          <div class="word">
+            <p class="title">より鋭いデューデリジェンス</p>
+            <p class="cont">当社のアドバイザリー業務は、複雑かつ進化し続けるファンド・マネージャーの全体像を読み解き、より良い意思決定につながるマクロとミクロの視点を提供します。さらに、ファンド投資、セカンダリー投資、共同投資の各事業が生み出す相乗効果により、デューデリジェンス上の重要な観点が明らかになります。これを当社のデータおよびアナリティクス基盤と組み合わせることで、チームとパートナーに対して、より高い明確性と実践的な指針をもたらします。</p>
+          </div>
         </div>
       </div>
-    </section>
+    </div>
+    <div class="bottom">
+      <p class="title">私たちの視点</p>
+      <p class="subtitle">複雑さを明確にする: プライベート・マーケットの世界を見通す視点。</p>
+      <div class="lists">
+        <div class="btm_item" v-for="(item, index) in btmLists" :key="index">
+          <img :src="item.img" alt="">
+          <div class="bottom_c">
+            <div class="btn">{{ item.btn }}</div>
+            <p>{{ item.content }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 /* ===== 总览介绍 ===== */
 .overview {
-  background: var(--color-bg);
+  background: #f2eff1;
   padding: var(--space-3xl) 0;
 }
 
@@ -189,30 +214,24 @@ const sections = [
 
 .card-section-kicker {
   display: inline-block;
-  font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: 20px;
   font-weight: 700;
+  color: #daff96;
   text-transform: uppercase;
   letter-spacing: 0.14em;
-  color: var(--color-accent);
   margin-bottom: var(--space-sm);
 }
 
 .card-section-title {
   font-family: var(--font-serif);
-  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
-  font-weight: 700;
+  font-size: 16px;
+  font-weight: normal;
   line-height: 1.2;
   color: var(--color-primary);
   letter-spacing: -0.01em;
 }
 
-/* ===== 卡片网格 ===== */
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: var(--space-lg);
-}
+
 
 .card {
   display: flex;
@@ -306,10 +325,6 @@ const sections = [
   .card-section {
     padding: var(--space-2xl) 0;
   }
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
-  }
   .card-section-head {
     margin-bottom: var(--space-xl);
   }
@@ -321,11 +336,227 @@ const sections = [
   .card-section {
     padding: var(--space-xl) 0;
   }
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
   .card-body {
     padding: var(--space-md);
+  }
+}
+</style>
+<style lang="scss" scoped>
+.car_con {
+  display: flex;
+  justify-content: space-between;
+  max-width: var(--container-max);
+  margin: 40px auto;
+  .card-section {
+    width: 387px;
+    height: 675px;
+    position: relative;
+    z-index: 2;
+    padding: 0;
+    .icon_bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+    .card-section-inner {
+      position: relative;
+      z-index: 2;
+      padding: 0;
+      height: 100%;
+      .card-section-head {
+        width: 80%;
+        margin-left: 20%;
+        height: 100%;
+        .card-section-kicker {
+          display: block;
+          width: 100%;
+          height: 208px;
+          background: #191f23cc;
+          text-align: center;
+          line-height: 208px;
+          color: #daff96;
+          margin-bottom: 0;
+        }
+        .card-section-title {
+          display: block;
+          width: 100%;
+          height: calc(100% - 208px);
+          background: #f2eff1;
+          color: #445460;
+          padding: 0 20px;
+          padding-top: 40px;
+          border-top: 14px solid #daff96;
+        }
+      }
+    }
+  }
+}
+.center_con {
+  width: 100%;
+  margin: 0 auto;
+  .main_ttile {
+    font-family: var(--font-serif);
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-align: center;
+    padding:  40px 0;
+    margin-bottom: 0px;
+    background: rgb(25, 31, 35);
+    color: #ffffff;
+  }
+  .content {
+    display: flex;
+    .left {
+      flex: 1;
+      background-color: #445460;
+      padding: 60px 0;
+      .word {
+        width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #ffffff;
+        .title {
+          font-size: 42px;
+        }
+        .cont {
+          font-size: 24px;
+          width: 80%;
+          line-height: 40px;
+        }
+      }
+    }
+    .first_left {
+      display: flex;
+      justify-content: flex-end;
+    }
+    .right {
+      background: #2f3a42;
+    }
+  }
+}
+.bottom {
+  max-width: var(--container-max);
+  margin: 40px auto;
+  .title {
+    text-align: center;
+    font-size: 42px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 24px;
+  }
+  .lists {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    position: relative;
+    .btm_item {
+      width: 413px;
+      img {
+        width: 100%;
+        height: 208px;
+      }
+      .bottom_c {
+        width: 100%;
+        height: 202px;
+        background: #f2eff1;
+        padding: 20px;
+        .btn {
+          padding: 8px 12px;
+          background: #00b289;
+          color: #fff;
+          width: fit-content;
+          font-size: 18px;
+          margin-bottom: 10px;
+          cursor: pointer;
+          &:hover {
+            background: #445460;
+          }
+        }
+      }
+    }
+  }
+  
+}
+@media (max-width: 767px) {
+  .car_con {
+    display: block;
+    .card-section {
+      width: 96%;
+      margin: 0 auto;
+      margin-bottom: 16px;
+      height: 334px;
+      .card-section-inner {
+        width: 100%;
+        height: 100%;
+        .card-section-head {
+          width: 100%;
+          margin-left: 0;
+          .card-section-kicker {
+            height: 130px;
+            line-height: 130px;
+          }
+          .card-section-title {
+            font-size: 14px;
+            padding-top: 10px;
+            height: calc(100% - 130px);
+          }
+        }
+      }
+    }
+  }
+  .center_con {
+    .main_ttile {
+      font-size: 28px;
+      padding: 40px 20px;
+    }
+    .content {
+      display: block;
+      .left  {
+        .word {
+          .title {
+            font-size: 26px;
+          } 
+          .cont {
+            font-size: 20px;
+            line-height: 28px;
+          }
+          .cont {
+            width: 100%;
+            padding: 0 10px;
+          }
+        }
+      }
+      .right {
+        .word {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .bottom {
+    .title {
+      font-size: 28px;
+    }
+    .subtitle {
+      font-size: 20px;
+    }
+    .lists {
+      display: block;
+      padding: 0 10px;
+      .btm_item {
+        width: 100%;
+        margin-bottom: 16px;
+      }
+    }
   }
 }
 </style>

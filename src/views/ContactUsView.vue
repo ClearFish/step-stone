@@ -22,27 +22,27 @@ const submitted = ref(false)
 /* 右侧联系信息列表 */
 const contactInfo = [
   {
-    label: 'Headquarters',
-    value: '277 Park Avenue, 45th Floor, New York, NY 10017',
+    label: '本社',
+    value: '日本・東京都港区',
     type: 'address'
   },
   {
-    label: 'Telephone',
+    label: '電話番号',
     value: '+1 212 351 6100',
     type: 'phone'
   },
   {
-    label: 'General Inquiries',
+    label: '一般のお問い合わせ',
     value: 'info@stepstonegroup.com',
     type: 'email'
   },
   {
-    label: 'Shareholder Relations',
+    label: '株主関連のお問い合わせ',
     value: 'shareholders@stepstonegroup.com',
     type: 'email'
   },
   {
-    label: 'Media',
+    label: 'メディア',
     value: 'StepStonePR@icrinc.com',
     type: 'email'
   }
@@ -67,9 +67,9 @@ function resetForm() {
 <template>
   <main class="page">
     <PageHero
-      title="Contact Us"
-      subtitle="Get in touch with StepStone Group"
-      eyebrow="Contact"
+      title="お問い合わせ"
+      subtitle="Zenith Capital Lab Group までお気軽にご連絡ください"
+      eyebrow="コンタクト"
     />
 
     <section class="contact-section">
@@ -77,10 +77,9 @@ function resetForm() {
         <div class="contact-layout">
           <!-- 左侧：联系表单 -->
           <div class="contact-form-wrap">
-            <h2 class="contact-block-title">Send us a message</h2>
+            <h2 class="contact-block-title">メッセージを送る</h2>
             <p class="contact-block-intro">
-              Complete the form below and a member of our team will get back to
-              you shortly.
+              以下のフォームにご記入ください。担当者より折り返しご連絡いたします。
             </p>
 
             <!-- 感谢提示（提交后显示） -->
@@ -98,13 +97,13 @@ function resetForm() {
                   </svg>
                 </div>
                 <div class="thank-you-text">
-                  <h3>Thank you</h3>
+                  <h3>ありがとうございます</h3>
                   <p>
-                    Your message has been received. We'll be in touch soon.
+                    メッセージを受け付けました。近日中にご連絡いたします。
                   </p>
                 </div>
                 <button class="thank-you-reset" type="button" @click="resetForm">
-                  Send another message
+                  もう一度送信する
                 </button>
               </div>
             </transition>
@@ -113,18 +112,18 @@ function resetForm() {
             <form v-if="!submitted" class="contact-form" @submit.prevent="handleSubmit">
               <div class="form-row">
                 <div class="form-field">
-                  <label for="name">Name <span class="req">*</span></label>
+                  <label for="name">お名前 <span class="req">*</span></label>
                   <input
                     id="name"
                     v-model="form.name"
                     type="text"
                     required
                     autocomplete="name"
-                    placeholder="Your full name"
+                    placeholder="氏名を入力してください"
                   />
                 </div>
                 <div class="form-field">
-                  <label for="email">Email <span class="req">*</span></label>
+                  <label for="email">メールアドレス <span class="req">*</span></label>
                   <input
                     id="email"
                     v-model="form.email"
@@ -138,47 +137,47 @@ function resetForm() {
 
               <div class="form-row">
                 <div class="form-field">
-                  <label for="company">Company</label>
+                  <label for="company">会社名</label>
                   <input
                     id="company"
                     v-model="form.company"
                     type="text"
                     autocomplete="organization"
-                    placeholder="Company name"
+                    placeholder="会社名を入力してください"
                   />
                 </div>
                 <div class="form-field">
-                  <label for="subject">Subject <span class="req">*</span></label>
+                  <label for="subject">件名 <span class="req">*</span></label>
                   <input
                     id="subject"
                     v-model="form.subject"
                     type="text"
                     required
-                    placeholder="How can we help?"
+                    placeholder="ご用件を入力してください"
                   />
                 </div>
               </div>
 
               <div class="form-field">
-                <label for="message">Message <span class="req">*</span></label>
+                <label for="message">メッセージ <span class="req">*</span></label>
                 <textarea
                   id="message"
                   v-model="form.message"
                   rows="6"
                   required
-                  placeholder="Tell us a bit more about your inquiry..."
+                  placeholder="お問い合わせ内容を詳しくご記入ください..."
                 ></textarea>
               </div>
 
-              <button type="submit" class="submit-btn">Send Message</button>
+              <button type="submit" class="submit-btn">送信する</button>
             </form>
           </div>
 
           <!-- 右侧：联系信息 -->
           <aside class="contact-info">
-            <h2 class="contact-block-title">Contact details</h2>
+            <h2 class="contact-block-title">連絡先情報</h2>
             <p class="contact-block-intro">
-              Reach the right team directly using the details below.
+              以下の連絡先から、該当する担当チームへ直接ご連絡いただけます。
             </p>
 
             <ul class="info-list">
@@ -199,9 +198,9 @@ function resetForm() {
             </ul>
 
             <div class="info-note">
-              <span class="info-note-label">Looking for an office?</span>
+              <span class="info-note-label">オフィスをお探しですか？</span>
               <router-link to="/offices" class="info-note-link">
-                View all locations
+                すべての拠点を見る
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                   <path
                     d="M5 12h14M13 6l6 6-6 6"
@@ -317,9 +316,9 @@ function resetForm() {
   font-size: 0.9375rem;
   font-weight: 600;
   letter-spacing: 0.02em;
-  color: #ffffff;
-  background: var(--color-accent);
-  border: 1px solid var(--color-accent);
+  color: #191f23;
+  background: #daff96;
+  /* border: 1px solid var(--color-accent); */
   border-radius: 2px;
   cursor: pointer;
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
@@ -327,7 +326,8 @@ function resetForm() {
 
 .submit-btn:hover {
   background: var(--color-primary);
-  border-color: var(--color-primary);
+  /* border-color: var(--color-primary); */
+  color: #ffffff;
   transform: translateY(-2px);
 }
 

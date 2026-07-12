@@ -166,7 +166,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
                 </div>
               </li>
               <li>
-                <router-link to="/contact" class="concact-link">
+                <router-link to="/contact-us" class="concact-link">
                   お問い合わせ
                 </router-link>
               </li>

@@ -9,18 +9,18 @@ import { articles } from '@/data/howWeThink'
 
 /* 分类筛选 Tab：All + 各分类 */
 const tabs = [
-  'All',
-  'Market insights',
-  'Whitepapers',
-  'Industry updates',
-  'Regulatory and compliance',
-  'How we think'
+  'すべて',
+  'マーケット・インサイト',
+  'ホワイトペーパー',
+  '業界アップデート',
+  '規制・コンプライアンス',
+  '私たちの視点'
 ]
 
-const activeTab = ref('All')
+const activeTab = ref('すべて')
 
 const filteredArticles = computed(() => {
-  if (activeTab.value === 'All') return articles
+  if (activeTab.value === 'すべて') return articles
   return articles.filter((item) => item.category === activeTab.value)
 })
 
@@ -34,12 +34,19 @@ const videoLink = '/how-we-think/videos'
     <!-- 1. PageHero（内联） -->
     <section class="hero">
       <div class="hero-bg" aria-hidden="true"></div>
-      <div class="hero-overlay" aria-hidden="true"></div>
-      <div class="hero-inner container">
-        <h1 class="hero-title">How We Think</h1>
-        <p class="hero-subtitle">
-          Insights and perspectives from across the private markets
-        </p>
+      <div class="top_c">
+        <div class="hero-inner container">
+          <h1 class="hero-title">私たちの視点</h1>
+          <p class="hero-subtitle">
+            プライベート・マーケットをより深く理解し、その可能性を最大限に引き出すための洞察と視点。
+          </p>
+        </div>
+        <div class="hero-inner other_c">
+          <div class="hero-title">ポッドキャスト</div>
+          <p class="hero-subtitle">
+            RPM 第61回 | トップ・クオータイルの先へ: ディール単位のベンチマーキングがプライベート・マーケット投資家にもたらす価値
+          </p>
+        </div>
       </div>
     </section>
 
@@ -47,7 +54,7 @@ const videoLink = '/how-we-think/videos'
     <section class="articles">
       <div class="container articles-inner">
         <!-- 分类筛选 Tab 栏 -->
-        <div class="tabs" role="tablist" aria-label="Article categories">
+        <div class="tabs" role="tablist" aria-label="記事カテゴリー">
           <button
             v-for="tab in tabs"
             :key="tab"
@@ -80,48 +87,26 @@ const videoLink = '/how-we-think/videos'
                 <img :src="item.image" :alt="item.title" loading="lazy" />
               </div>
               <div class="article-body">
-                <span class="article-category">{{ item.category }}</span>
+                <div class="btn">{{ item.category }}</div>
                 <h3 class="article-title">{{ item.title }}</h3>
-                <div class="article-meta">
-                  <time :datetime="item.date">{{ item.date }}</time>
-                </div>
-                <span class="article-readmore">
-                  Read more
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M5 12h14M13 6l6 6-6 6"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </span>
               </div>
             </a>
           </div>
           <p v-else class="articles-empty" :key="`empty-${activeTab}`">
-            No articles in this category yet. Please check back soon.
+            このカテゴリーの記事はまだありません。しばらくしてから再度ご確認ください。
           </p>
         </transition>
       </div>
     </section>
 
     <!-- 3. Podcasts & Videos 区块 -->
-    <section class="media">
+    <!-- <section class="media">
       <div class="container media-inner">
         <header class="media-head">
-          <h2 class="media-title">Podcasts &amp; Videos</h2>
+          <h2 class="media-title">ポッドキャストと動画</h2>
         </header>
 
         <div class="media-grid">
-          <!-- Podcasts 卡片 -->
           <a :href="podcastLink" class="media-card">
             <span class="media-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none">
@@ -148,14 +133,13 @@ const videoLink = '/how-we-think/videos'
               </svg>
             </span>
             <div class="media-card-body">
-              <h3 class="media-card-title">StepStone Podcasts</h3>
+              <h3 class="media-card-title">StepStone ポッドキャスト</h3>
               <p class="media-card-text">
-                Tune in to conversations with our investment professionals as
-                they unpack the trends, data, and decisions shaping the private
-                markets.
+                当社の投資プロフェッショナルとの対話を通じて、プライベート・
+                マーケットを形づくるトレンド、データ、意思決定をひも解きます。
               </p>
               <span class="media-card-link">
-                Listen now
+                今すぐ聴く
                 <svg
                   width="14"
                   height="14"
@@ -174,8 +158,6 @@ const videoLink = '/how-we-think/videos'
               </span>
             </div>
           </a>
-
-          <!-- Videos 卡片 -->
           <a :href="videoLink" class="media-card">
             <span class="media-icon" aria-hidden="true">
               <svg viewBox="0 0 48 48" fill="none">
@@ -195,13 +177,13 @@ const videoLink = '/how-we-think/videos'
               </svg>
             </span>
             <div class="media-card-body">
-              <h3 class="media-card-title">StepStone Videos</h3>
+              <h3 class="media-card-title">StepStone 動画</h3>
               <p class="media-card-text">
-                Watch our experts break down complex private markets topics with
-                clarity — from market outlooks to deep-dive explainers.
+                市場見通しから詳細な解説まで、当社の専門家が複雑なプライベート・
+                マーケットのテーマをわかりやすく解説します。
               </p>
               <span class="media-card-link">
-                Watch now
+                今すぐ見る
                 <svg
                   width="14"
                   height="14"
@@ -222,7 +204,7 @@ const videoLink = '/how-we-think/videos'
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
   </main>
 </template>
 
@@ -235,13 +217,18 @@ const videoLink = '/how-we-think/videos'
 .hero {
   position: relative;
   width: 100%;
-  min-height: 45vh;
+  min-height: 65vh;
   display: flex;
-  align-items: flex-end;
   overflow: hidden;
   background: var(--color-primary-dark);
 }
-
+.top_c {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  margin-top: 160px;
+}
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -272,16 +259,20 @@ const videoLink = '/how-we-think/videos'
 .hero-inner {
   position: relative;
   z-index: 2;
-  padding-top: var(--space-3xl);
+  padding-top: var(--space-2xl);
   padding-bottom: var(--space-2xl);
   max-width: var(--container-max);
+  background: #191f23cc;
+  width: 530px;
+  height: 270px;
+  
 }
 
 .hero-title {
-  color: #ffffff;
+  color: #daff96;
   font-family: var(--font-serif);
-  font-size: clamp(2.25rem, 5.5vw, 4rem);
-  font-weight: 700;
+  font-size: 40px;
+  font-weight: normal;
   line-height: 1.1;
   letter-spacing: -0.01em;
   margin-bottom: var(--space-md);
@@ -312,11 +303,22 @@ const videoLink = '/how-we-think/videos'
 
 @media (max-width: 767px) {
   .hero {
-    min-height: 42vh;
+    min-height: 92vh;
   }
   .hero-inner {
     padding-top: var(--space-2xl);
     padding-bottom: var(--space-xl);
+  }
+  .top_c {
+    display:block;
+  }
+  .hero-inner {
+    width: 98%;
+  }
+  .other_c {
+    width: 98%;
+    margin-left: 0;
+    margin-top: 0;
   }
 }
 
@@ -337,38 +339,30 @@ const videoLink = '/how-we-think/videos'
   gap: var(--space-xs) var(--space-lg);
   padding-bottom: var(--space-md);
   margin-bottom: var(--space-xl);
-  border-bottom: 1px solid var(--color-border);
 }
 
 .tab {
   position: relative;
-  padding: 8px 2px;
+  padding: 6px 18px;
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-text-light);
   white-space: nowrap;
   transition: color 0.2s ease;
+  background: #445460;
+  color: #fff;
 }
 
-.tab::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: -1px;
-  height: 2px;
-  background: var(--color-accent);
-  transform: scaleX(0);
-  transform-origin: left center;
-  transition: transform 0.25s ease;
-}
+
 
 .tab:hover {
-  color: var(--color-primary);
+   background: #daff96;
+  color: #445460;
 }
 
 .tab.active {
-  color: var(--color-primary);
+  background: #daff96;
+  color: #445460;
   font-weight: 600;
 }
 
@@ -387,7 +381,6 @@ const videoLink = '/how-we-think/videos'
   display: flex;
   flex-direction: column;
   background: var(--color-bg);
-  border: 1px solid var(--color-border);
   color: inherit;
   overflow: hidden;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
@@ -407,6 +400,7 @@ const videoLink = '/how-we-think/videos'
   aspect-ratio: 4 / 3;
   overflow: hidden;
   background: var(--color-bg-alt);
+  height: 208px;
 }
 
 .article-media img {
@@ -424,6 +418,8 @@ const videoLink = '/how-we-think/videos'
   display: flex;
   flex-direction: column;
   flex: 1;
+  height: 174px;
+  background: #f2eff1;
   padding: var(--space-md) var(--space-md) var(--space-lg);
 }
 
@@ -442,7 +438,7 @@ const videoLink = '/how-we-think/videos'
   font-size: 1.125rem;
   font-weight: 700;
   line-height: 1.35;
-  color: var(--color-primary);
+  color: #445460;
   margin-bottom: var(--space-sm);
   transition: color 0.2s ease;
 }
@@ -641,6 +637,60 @@ const videoLink = '/how-we-think/videos'
   }
   .media-card {
     padding: var(--space-lg);
+  }
+}
+</style>
+<style lang="scss" scoped>
+.other_c {
+  background: #191f23;
+  padding: 20px;
+  margin-top: 40px;
+  margin-left: 40px;
+  .hero-title {
+    padding: 8px 12px;
+    background: #445460;
+    color: #fff;
+    width: fit-content;
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      background: #daff96;
+      color: #445460;
+      font-weight: normal;
+      font-size: 18px;
+    }
+  }
+  .hero-subtitle {
+    font-size: 16px;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+}
+</style>
+<style lang="scss" scoped>
+.article-body {
+  .btn {
+    padding: 8px 12px;
+    background: #00b289;
+    color: #fff;
+    width: fit-content;
+    font-size: 18px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    &:hover {
+      background: #445460;
+    }
+  }
+}
+@media (max-width: 767px) {
+  .top_c {
+    margin-top: 240px;
+  }
+  .other_c {
+    width: 98%;
+    margin: 0 auto;
+    margin-top: 20px;
   }
 }
 </style>
