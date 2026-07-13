@@ -10,7 +10,7 @@ export const navMenu = [
     label: '私たちについて',
     to: '/who-we-are',
     children: [
-      { label: 'チーム紹介', to: '/who-we-are/our-team' },
+      { label: '私たちについて', to: '/who-we-are' },
       { label: 'StepStoneで働く', to: '/who-we-are/working-at-stepstone-culture' },
       { label: '企業市民活動', to: '/who-we-are/corporate-citizenship' }
     ]

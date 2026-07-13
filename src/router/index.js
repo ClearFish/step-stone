@@ -106,7 +106,7 @@ const routes = [
   {
     path: '/who-we-are/corporate-citizenship',
     name: 'who-we-are-corporate-citizenship',
-    component: PlaceholderView,
+    component:  () => import('@/views/CorporateCitizenshipView.vue'),
     meta: { title: 'Corporate Citizenship', parent: 'Who We Are' }
   },
   {
