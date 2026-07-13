@@ -16,7 +16,7 @@ const routes = [
   {
     path: '/what-we-do/asset-classes/private-equity',
     name: 'what-we-do-private-equity',
-    component: PlaceholderView,
+    component: () => import('@/views/PrivateEquityView.vue'),
     meta: { title: 'Private Equity', parent: 'What We Do' }
   },
   {
