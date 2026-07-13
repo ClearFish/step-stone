@@ -4,14 +4,14 @@
             <div class="hero-bg" aria-hidden="true"></div>
             <div class="top_c">
                 <div class="hero-inner container">
-                    <h1 class="hero-title">Private Equity and Venture Capital</h1>
+                    <h1 class="hero-title">プライベートエクイティとベンチャーキャピタル</h1>
                     <p class="hero-subtitle">
-                        Designed to exceed expectations.
+                        期待を超えるために設計された戦略。
                     </p>
                 </div>
                 <div class="hero-inner other_c">
                     <div class="hero-title">市場調査</div>
-                    <p class="hero-subtitle">Beneath the headlines: German private equity</p>
+                    <p class="hero-subtitle">見出しのその先へ: ドイツのプライベートエクイティ</p>
                 </div>
             </div>
         </section>
@@ -19,7 +19,7 @@
             <div class="content">
                 <div class="left first_left">
                     <div class="word">
-                        <p class="cont">Backed by our global reach, we create custom client portfolios using a disciplined approach defined by extensive research and analytics, to source across the entire spectrum of private equity opportunities.</p>
+                        <p class="cont">私たちはグローバルなネットワークを基盤に、徹底したリサーチと分析に裏打ちされた規律あるアプローチによって、プライベートエクイティのあらゆる機会を捉え、クライアントごとに最適化されたポートフォリオを構築します。</p>
                     </div>
                 </div>
                 <div class="left right">
@@ -29,19 +29,19 @@
                             <p class="value">461</p>
                             <p class="lab">B</p>
                         </div>
-                        <p class="title">Total capital responsibility</p>
-                        <p class="subtitle">As of 3/31/2026</p>
+                        <p class="title">受託資本総額</p>
+                        <p class="subtitle">2026年3月31日時点</p>
                     </div>
                 </div>
             </div>
         </div>
         <div class="setps_con">
             <div class="content">
-                <p class="title">The StepStone investment edge</p>
+                <p class="title">StepStone の投資優位性</p>
                 <ul>
-                    <li>Why secondaries and co-investments are critical, and how clients can benefit</li>
-                    <li>What differentiates our platform</li>
-                    <li>How we maintain our investment edge</li>
+                    <li>なぜセカンダリー投資と共同投資が重要であり、クライアントにどのような利益をもたらすのか</li>
+                    <li>当社のプラットフォームを差別化する要素</li>
+                    <li>どのように投資上の優位性を維持しているのか</li>
                 </ul>
             </div>
         </div>
@@ -49,9 +49,9 @@
             <div class="content">
                 <div class="left first_left">
                     <div class="word">
-                        <p class="title">Our investment team</p>
-                        <p class="cont">Whether we are serving an advisory or an asset management client, we offer a single, integrated expert team that forms closely collaborative relationships with the foremost GPs and emerging managers.</p>
-                        <div class="btn">Meet the team</div>
+                        <p class="title">私たちの投資チーム</p>
+                        <p class="cont">アドバイザリー業務であれ資産運用であれ、私たちは一体化された単一の専門家チームとして、主要なGPや新興マネージャーと緊密な協働関係を築きながらサービスを提供します。</p>
+                        <div class="btn">チームを見る</div>
                     </div>
                 </div>
                 <div class="left right">
@@ -60,9 +60,9 @@
                             <p class="value">180</p>
                             <p class="label">+</p>
                         </div>
-                        <p class="title">Total capital responsibility</p>
-                        <p class="subtitle">As of 3/31/2026</p>
-                        <p class="other">Delivering deep sector expertise and a vital global/local perspective.</p>
+                        <p class="title">受託資本総額</p>
+                        <p class="subtitle">2026年3月31日時点</p>
+                        <p class="other">深いセクター専門性と重要なグローバル・ローカル両面の視点を提供します。</p>
                     </div>
                 </div>
             </div>
@@ -70,25 +70,25 @@
         <div class="word_c">
             <div class="content">
                 <div class="left">
-                    <p class="title">Strategies that solve for all cycles</p>
-                    <p class="subt_title">Being active across fund investments, secondaries, co-investments and direct investments allows us to customize solutions designed to perform when public markets are up and to offer less downside in leaner times.</p>
+                    <p class="title">あらゆるサイクルに対応する戦略</p>
+                    <p class="subt_title">ファンド投資、セカンダリー、共同投資、直接投資の全領域で活動することで、私たちは市場が好調な局面で成果を発揮し、厳しい局面では下振れを抑えるよう設計されたソリューションを提供できます。</p>
                 </div>
                 <div class="left right">
-                    <p class="title">Sector focus: our specialty</p>
-                    <p class="subt_title">Our investment team is organized into specialized units, giving investors a distinctively deeper level of insight, and greater access to managers throughout all private equity strategies and key investment geographies.</p>
+                    <p class="title">セクター特化: 私たちの強み</p>
+                    <p class="subt_title">私たちの投資チームは専門分野ごとのユニットで構成されており、投資家に対してより深い知見を提供するとともに、あらゆるプライベートエクイティ戦略と主要投資地域におけるマネージャーへの幅広いアクセスを可能にします。</p>
                 </div>
             </div>
         </div>
         <div class="center_bg">
             <div class="content">
-                <p class="title">Venture Capital and Growth Equity</p>
-                <p class="subtitle">Backing innovation to build a better world.</p>
+                <p class="title">ベンチャーキャピタルとグロースエクイティ</p>
+                <p class="subtitle">より良い世界を築くためのイノベーションを支援します。</p>
                 <div class="btn">詳しく見る</div>
             </div>
         </div>
         <div class="car_box partner_box btm_con">
-             <p class="title">Our perspective</p>
-            <p class="subtitle">An extensive view of the sector informed by expert insights and recent opinions.</p>
+             <p class="title">私たちの視点</p>
+            <p class="subtitle">専門家の知見と最新の見解に基づく、セクターに関する幅広い視野をご覧ください。</p>
             <div class="lists">
                 <div class="btm_item" v-for="(item, index) in btmLists" :key="index">
                 <img :src="item.img" alt="">
@@ -100,9 +100,9 @@
             </div>
         </div>
         <div class="bottom_c">
-            <p class="title">Responsible Investment</p>
-            <p class="subttile">Adopting a long-term outlook and incorporating ESG considerations helps us identify and invest in companies positioned for future growth and success.</p>
-            <div class="btn">Learn more</div>
+            <p class="title">責任ある投資</p>
+            <p class="subttile">長期的な視点を持ち、ESG の観点を組み込むことで、将来の成長と成功に向けて有望な企業を見極め、投資することが可能になります。</p>
+            <div class="btn">詳しく見る</div>
         </div>
     </div>
 </template>
@@ -114,18 +114,18 @@ import bg3 from "@/assets/insight/bg3.png"
 const btmLists = ref([
     {
         img: bg1,
-        btn: 'Market research',
-        content: 'Beneath the headlines: German private equity',
+        btn: '市場調査',
+        content: '見出しのその先へ: ドイツのプライベートエクイティ',
     },
     {
         img: bg2,
-        btn: 'Market research',
-        content: 'RPM Ep. 59 | Finding an edge in UK private equity: Scarcity, specialism, and succession',
+        btn: '市場調査',
+        content: 'RPM 第59回 | 希少性、専門性、承継から読み解く英国プライベートエクイティの優位性',
     },
     {
         img: bg3,
-        btn: 'Market research',
-        content: 'Not all private equity GP-leds are created equa',
+        btn: '市場調査',
+        content: 'すべてのプライベートエクイティ GP 主導案件が同じではない',
     },
 ])
 </script>
