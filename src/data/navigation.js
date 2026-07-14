@@ -11,7 +11,7 @@ export const navMenu = [
     to: '/who-we-are',
     children: [
       { label: '私たちについて', to: '/who-we-are' },
-      { label: 'StepStoneで働く', to: '/who-we-are/working-at-stepstone-culture' },
+      // { label: 'StepStoneで働く', to: '/who-we-are/working-at-stepstone-culture' },
       { label: '企業市民活動', to: '/who-we-are/corporate-citizenship' }
     ]
   },
@@ -20,9 +20,11 @@ export const navMenu = [
     to: '/what-we-do',
     children: [
       { label: 'プライベートエクイティ', to: '/what-we-do/asset-classes/private-equity' },
+      { label: 'ベンチャーキャピタルおよびグロースエクイティ', to: '/what-we-do/asset-classes/venture-and-growth-equity' },
+      { label: '民間債務', to: '/what-we-do/asset-classes/private-debt' },
       { label: '不動産', to: '/what-we-do/asset-classes/real-estate' },
-      { label: 'インフラストラクチャー', to: '/what-we-do/asset-classes/infrastructure' },
-      { label: 'プライベートデット', to: '/what-we-do/asset-classes/private-debt' },
+      // infrastructure
+      { label: 'インフラおよび実物資産', to: '/what-we-do/asset-classes/infrastructure' },
       { label: 'ファンド投資', to: '/what-we-do/strategies/fund-investments' },
       { label: 'セカンダリー', to: '/what-we-do/strategies/secondaries' },
       { label: '共同投資', to: '/what-we-do/strategies/co-investments' },
@@ -30,16 +32,16 @@ export const navMenu = [
       { label: 'アドバイザリーサービス', to: '/what-we-do/solutions-services/advisory-services' },
       { label: '資産運用', to: '/what-we-do/solutions-services/asset-management' },
       { label: 'データ分析', to: '/what-we-do/solutions-services/data-analytics' },
-      { label: 'プライベートウェルスソリューション', to: '/what-we-do/solutions-services/private-wealth-solutions' }
+      // { label: 'プライベートウェルスソリューション', to: '/what-we-do/solutions-services/private-wealth-solutions' }
     ]
   },
   {
     label: '私たちの視点',
     to: '/how-we-think',
     children: [
-      { label: 'ポッドキャスト', to: '/how-we-think/podcasts' },
-      { label: '動画', to: '/how-we-think/videos' },
-      { label: 'カルチャーとコミュニティ', to: '/how-we-think/culture-community' }
+      // { label: 'ポッドキャスト', to: '/how-we-think/podcasts' },
+      // { label: '動画', to: '/how-we-think/videos' },
+      // { label: 'カルチャーとコミュニティ', to: '/how-we-think/culture-community' }
     ]
   }
 ]
@@ -61,9 +63,10 @@ export const megaMenuGroups = [
     title: '資産クラス',
     items: [
       { label: 'プライベートエクイティ', to: '/what-we-do/asset-classes/private-equity' },
+      { label: 'ベンチャーキャピタルおよびグロースエクイティ', to: '/what-we-do/asset-classes/venture-and-growth-equity' },
+      { label: '民間債務', to: '/what-we-do/asset-classes/private-debt' },
       { label: '不動産', to: '/what-we-do/asset-classes/real-estate' },
-      { label: 'インフラストラクチャー', to: '/what-we-do/asset-classes/infrastructure' },
-      { label: 'プライベートデット', to: '/what-we-do/asset-classes/private-debt' }
+      { label: 'インフラおよび実物資産', to: '/what-we-do/asset-classes/infrastructure' },
     ]
   },
   {

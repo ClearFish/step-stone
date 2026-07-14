@@ -99,7 +99,7 @@
                 </div>
             </div>
         </div>
-        <div class="bottom_c">
+        <div class="bottom_co">
             <p class="title">責任ある投資</p>
             <p class="subttile">長期的な視点を持ち、ESG の観点を組み込むことで、将来の成長と成功に向けて有望な企業を見極め、投資することが可能になります。</p>
             <div class="btn">詳しく見る</div>
@@ -319,14 +319,14 @@ const btmLists = ref([
                     margin-bottom: 24px;
                     padding-left: 30px;
                     &:before {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    width: 16px;
-                    height: 12px;
-                    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='none'%3E%3Cpath fill='%23fff' d='M13.594.625 5.375 8.844l-3-3.031c-.156-.125-.406-.125-.531 0l-.907.906c-.125.125-.125.375 0 .531l4.188 4.156a.36.36 0 0 0 .531 0l9.375-9.375c.125-.125.125-.375 0-.531l-.906-.875c-.125-.156-.375-.156-.531 0Z'/%3E%3C/svg%3E");
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        width: 16px;
+                        height: 12px;
+                        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='12' fill='none'%3E%3Cpath fill='%23fff' d='M13.594.625 5.375 8.844l-3-3.031c-.156-.125-.406-.125-.531 0l-.907.906c-.125.125-.125.375 0 .531l4.188 4.156a.36.36 0 0 0 .531 0l9.375-9.375c.125-.125.125-.375 0-.531l-.906-.875c-.125-.156-.375-.156-.531 0Z'/%3E%3C/svg%3E");
                     }
                 }
             }
@@ -503,13 +503,13 @@ const btmLists = ref([
             }
         }
     }
-    .bottom_c {
+    .bottom_co {
         padding: 40px;
         background: rgb(68, 84, 96);
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-top: 40px;
+         margin-top: 40px;
         .title {
             text-align: center;
             font-size: 42px;
@@ -633,7 +633,8 @@ const btmLists = ref([
                 }
             }
         }
-        .bottom_c {
+        .bottom_co {
+           
             .title {
                 font-size: 20px;
             }

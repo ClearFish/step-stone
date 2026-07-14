@@ -20,63 +20,69 @@ const routes = [
     meta: { title: 'Private Equity', parent: 'What We Do' }
   },
   {
-    path: '/what-we-do/asset-classes/real-estate',
-    name: 'what-we-do-real-estate',
-    component: PlaceholderView,
-    meta: { title: 'Real Estate', parent: 'What We Do' }
+    path: '/what-we-do/asset-classes/venture-and-growth-equity',
+    name: 'what-we-do-venture-and-growth-equity',
+    component: () => import('@/views/VentureAndGrowthEquityView.vue'),
+    meta: { title: 'Venture and Growth Equity', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/asset-classes/infrastructure',
     name: 'what-we-do-infrastructure',
-    component: PlaceholderView,
+    component: () => import('@/views/InfrastructureView.vue'),
     meta: { title: 'Infrastructure', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/asset-classes/private-debt',
     name: 'what-we-do-private-debt',
-    component: PlaceholderView,
+    component: () => import('@/views/PrivateDebtView.vue'),
     meta: { title: 'Private Debt', parent: 'What We Do' }
+  },
+  {
+    path: '/what-we-do/asset-classes/real-estate',
+    name: 'what-we-do-real-estate',
+    component: () => import('@/views/RealEstateView.vue'),
+    meta: { title: 'Real Estate', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/strategies/fund-investments',
     name: 'what-we-do-fund-investments',
-    component: PlaceholderView,
+    component: () => import('@/views/FundInvestmentsView.vue'),
     meta: { title: 'Fund Investments', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/strategies/secondaries',
     name: 'what-we-do-secondaries',
-    component: PlaceholderView,
+    component: () => import('@/views/SecondariesView.vue'),
     meta: { title: 'Secondaries', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/strategies/co-investments',
     name: 'what-we-do-co-investments',
-    component: PlaceholderView,
+    component: () => import('@/views/CoInvestmentsView.vue'),
     meta: { title: 'Co-Investments', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/strategies/direct-investments',
     name: 'what-we-do-direct-investments',
-    component: PlaceholderView,
+    component: () => import('@/views/DirectInvestmentsView.vue'),
     meta: { title: 'Direct Investments', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/solutions-services/advisory-services',
     name: 'what-we-do-advisory-services',
-    component: PlaceholderView,
+    component: () => import('@/views/AdvisoryServicesView.vue'),
     meta: { title: 'Advisory Services', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/solutions-services/asset-management',
     name: 'what-we-do-asset-management',
-    component: PlaceholderView,
+    component: () => import('@/views/AssetManagementView.vue'),
     meta: { title: 'Asset Management', parent: 'What We Do' }
   },
   {
     path: '/what-we-do/solutions-services/data-analytics',
     name: 'what-we-do-data-analytics',
-    component: PlaceholderView,
+    component: () => import('@/views/DataAnalyticsView.vue'), 
     meta: { title: 'Data Analytics', parent: 'What We Do' }
   },
   {
