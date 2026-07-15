@@ -14,7 +14,7 @@ const stats = [
   { value: '$771B', label: 'Total capital responsibility' }
 ]
 
-const heroImage = '/images/insights/2018_StepStone_NewYork_2949web-e1544552951172.jpeg'
+const heroImage = '/images/insights/homebanner.jpg'
 const introImage = '/images/insights/2018_StepStone_NewYork_1995web-e1544550999386.jpg'
 </script>
 
