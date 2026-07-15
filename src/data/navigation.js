@@ -11,7 +11,6 @@ export const navMenu = [
     to: '/who-we-are',
     children: [
       { label: '私たちについて', to: '/who-we-are' },
-      // { label: 'StepStoneで働く', to: '/who-we-are/working-at-stepstone-culture' },
       { label:'私たちのチーム',to:'/who-we-are/our-team'},
       { label: '企業市民活動', to: '/who-we-are/corporate-citizenship' },
     ]
@@ -43,7 +42,9 @@ export const navMenu = [
       { label: '製品', to: '/how-we-think?categoryType=products' },
       { label: 'ニュース', to: '/how-we-think?categoryType=Firm news' },
       { label: '市場調査', to: '/how-we-think?categoryType=market research' },
-      { label: 'ビデオ', to: '/how-we-think?categoryType=video'}
+      { label: 'ビデオ', to: '/how-we-think?categoryType=video'},
+      { label:'方針および年次報告書',to:'/how-we-think/policies-annual-reports'},
+      { label:'アカデミー',to:'/how-we-think?categoryType=stepstone-academy'},
     ]
   }
 ]

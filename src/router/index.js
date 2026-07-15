@@ -140,6 +140,12 @@ const routes = [
     meta: { title: 'Culture & Community', parent: 'How We Think' }
   },
   {
+    path: '/how-we-think/policies-annual-reports',
+    name: 'how-we-think-policies-annual-reports',
+    component: () => import('@/views/PoliciesAnnualReportsView.vue'),
+    meta: { title: 'Policies & Annual Reports', parent: 'How We Think' }
+  },
+  {
     path: '/news-events',
     name: 'news-events',
     component: () => import('@/views/NewsEventsView.vue')

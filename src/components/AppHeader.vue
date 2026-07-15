@@ -86,9 +86,8 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
 <template>
   <header class="app-header" :class="{ 'is-scrolled': scrolled }">
     <div class="header-inner">
-      <div class="top_box">
+      <!-- <div class="top_box">
         <div class="top_con container">
-          <!-- 桌面端右侧 topLinks -->
           <nav class="top-links" aria-label="上部リンク">
             <router-link
               v-for="link in topLinks"
@@ -101,7 +100,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
             </router-link>
           </nav>
         </div>
-      </div>
+      </div> -->
       <div class="bottom_box">
         <div class="bottom_co container">
           <!-- Logo -->
@@ -263,7 +262,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
                 </li>
               </ul>
 
-              <div class="drawer-top-links">
+              <!-- <div class="drawer-top-links">
                 <router-link
                   v-for="link in topLinks"
                   :key="link.to"
@@ -273,7 +272,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
                 >
                   {{ link.label }}
                 </router-link>
-              </div>
+              </div> -->
             </nav>
           </div>
         </transition>
@@ -394,7 +393,7 @@ const hasChildren = (item) => Array.isArray(item.children) && item.children.leng
   border: 1px solid var(--color-border);
   box-shadow: 0 12px 32px rgba(15, 26, 38, 0.12);
   padding: var(--space-lg) var(--space-xl);
-  min-width: 220px;
+  min-width: 250px;
   animation: megaIn 0.18s ease;
 }
 

@@ -17,7 +17,7 @@ const currentYear = computed(() => new Date().getFullYear())
     <div class="footer-top container">
       <!-- 左侧：Logo + 公司简介 -->
       <div class="footer-brand">
-        <router-link to="/" class="footer-logo" aria-label="StepStone ホーム">
+        <router-link to="/" class="footer-logo" aria-label="Zenith Capital Lab ホーム">
          <img :src="Logo" alt="">
         </router-link>
         <p class="footer-blurb">{{ companyBlurb }}</p>
@@ -54,7 +54,7 @@ const currentYear = computed(() => new Date().getFullYear())
     <!-- 底部条 -->
     <div class="footer-bottom">
       <div class="container footer-bottom-inner">
-        <p class="copyright">&copy; {{ currentYear }} StepStone Group Inc.</p>
+        <p class="copyright">&copy; {{ currentYear }} Zenith Capital Lab Group Inc.</p>
         <div class="social-links">
           <a
             v-for="s in socialLinks"
