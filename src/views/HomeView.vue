@@ -8,7 +8,7 @@ import StatsSection from '@/components/home/StatsSection.vue'
 import PillarsSection from '@/components/home/PillarsSection.vue'
 import ClearViewSection from '@/components/home/ClearViewSection.vue'
 import InsightsSection from '@/components/home/InsightsSection.vue'
-import HumanIntro from "@/components/home/HumanIntro.vue"
+
 </script>
 
 <template>
@@ -18,7 +18,7 @@ import HumanIntro from "@/components/home/HumanIntro.vue"
     <PillarsSection />
     <ClearViewSection />
     <InsightsSection />
-    <HumanIntro />
+    
   </div>
 </template>
 

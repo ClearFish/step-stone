@@ -12,7 +12,8 @@ export const navMenu = [
     children: [
       { label: '私たちについて', to: '/who-we-are' },
       // { label: 'StepStoneで働く', to: '/who-we-are/working-at-stepstone-culture' },
-      { label: '企業市民活動', to: '/who-we-are/corporate-citizenship' }
+      { label:'私たちのチーム',to:'/who-we-are/our-team'},
+      { label: '企業市民活動', to: '/who-we-are/corporate-citizenship' },
     ]
   },
   {
@@ -39,9 +40,10 @@ export const navMenu = [
     label: '私たちの視点',
     to: '/how-we-think',
     children: [
-      // { label: 'ポッドキャスト', to: '/how-we-think/podcasts' },
-      // { label: '動画', to: '/how-we-think/videos' },
-      // { label: 'カルチャーとコミュニティ', to: '/how-we-think/culture-community' }
+      { label: '製品', to: '/how-we-think?categoryType=products' },
+      { label: 'ニュース', to: '/how-we-think?categoryType=Firm news' },
+      { label: '市場調査', to: '/how-we-think?categoryType=market research' },
+      { label: 'ビデオ', to: '/how-we-think?categoryType=video'}
     ]
   }
 ]
@@ -84,7 +86,7 @@ export const megaMenuGroups = [
       { label: 'アドバイザリーサービス', to: '/what-we-do/solutions-services/advisory-services' },
       { label: '資産運用', to: '/what-we-do/solutions-services/asset-management' },
       { label: 'データ分析', to: '/what-we-do/solutions-services/data-analytics' },
-      { label: 'プライベートウェルスソリューション', to: '/what-we-do/solutions-services/private-wealth-solutions' }
+      // { label: 'プライベートウェルスソリューション', to: '/what-we-do/solutions-services/private-wealth-solutions' }
     ]
   }
 ]

@@ -4,25 +4,44 @@
  * 复刻 StepStone Group /how-we-think/ 页面
  * 区块：内联 PageHero / 文章列表（分类 Tab + 卡片网格）/ Podcasts & Videos
  */
-import { ref, computed } from 'vue'
+import { ref, computed, watch } from 'vue'
 import { articles } from '@/data/howWeThink'
+import { useRoute } from 'vue-router'
+const route = useRoute()
+const categoryType = route.query.categoryType || ''
+
+watch(() => route.query.categoryType, (newVal, oldVal) => {
+  if (newVal !== oldVal) {
+    window.location.reload()
+  }
+})
 
 /* 分类筛选 Tab：All + 各分类 */
 const tabs = [
-  'すべて',
-  'マーケット・インサイト',
-  'ホワイトペーパー',
-  '業界アップデート',
-  '規制・コンプライアンス',
-  '私たちの視点'
+  {label:'すべて',value:''},
+  {label:'プライベートエクイティ',value:'Private Equity'},
+  {label:'民間債務',value:'Private Debt'},
+  {label:'不動産',value:'Real Estate'},
+  {label:'インフラストラクチャー',value:'Infrastructure'},
+  {label:'プライベート・ウェルス',value:'Private Wealth'},
+  {label:'責任投資',value:'Responsible Investment'},
 ]
 
-const activeTab = ref('すべて')
+const activeTab = ref('')
 
 const filteredArticles = computed(() => {
-  if (activeTab.value === 'すべて') return articles
-  return articles.filter((item) => item.category === activeTab.value)
+  if(categoryType === '') {
+    return articles 
+  }else {
+    let lists = articles.filter((item) => item.categoryType === categoryType)
+    if (activeTab.value === '') return lists
+    return lists.filter((item) => item.labelType === activeTab.value)
+  }
 })
+
+const choseTab = (tab) => {
+  activeTab.value = tab.value
+}
 
 /* Podcasts & Videos 区块链接 */
 const podcastLink = '/how-we-think/podcasts'
@@ -57,14 +76,14 @@ const videoLink = '/how-we-think/videos'
         <div class="tabs" role="tablist" aria-label="記事カテゴリー">
           <button
             v-for="tab in tabs"
-            :key="tab"
+            :key="tab.value"
             class="tab"
-            :class="{ active: activeTab === tab }"
+            :class="{ active: activeTab === tab.value }"
             role="tab"
-            :aria-selected="activeTab === tab"
-            @click="activeTab = tab"
+            :aria-selected="activeTab === tab.value"
+            @click="choseTab(tab)"
           >
-            {{ tab }}
+            {{ tab.label }}
           </button>
         </div>
 
@@ -98,113 +117,6 @@ const videoLink = '/how-we-think/videos'
         </transition>
       </div>
     </section>
-
-    <!-- 3. Podcasts & Videos 区块 -->
-    <!-- <section class="media">
-      <div class="container media-inner">
-        <header class="media-head">
-          <h2 class="media-title">ポッドキャストと動画</h2>
-        </header>
-
-        <div class="media-grid">
-          <a :href="podcastLink" class="media-card">
-            <span class="media-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect
-                  x="20"
-                  y="6"
-                  width="8"
-                  height="22"
-                  rx="4"
-                  fill="currentColor"
-                />
-                <path
-                  d="M14 22a10 10 0 0 0 20 0"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M24 32v8M16 42h16"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                />
-              </svg>
-            </span>
-            <div class="media-card-body">
-              <h3 class="media-card-title">StepStone ポッドキャスト</h3>
-              <p class="media-card-text">
-                当社の投資プロフェッショナルとの対話を通じて、プライベート・
-                マーケットを形づくるトレンド、データ、意思決定をひも解きます。
-              </p>
-              <span class="media-card-link">
-                今すぐ聴く
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-            </div>
-          </a>
-          <a :href="videoLink" class="media-card">
-            <span class="media-icon" aria-hidden="true">
-              <svg viewBox="0 0 48 48" fill="none">
-                <rect
-                  x="5"
-                  y="9"
-                  width="38"
-                  height="30"
-                  rx="4"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                />
-                <path
-                  d="M21 19.5v9l8-4.5-8-4.5Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </span>
-            <div class="media-card-body">
-              <h3 class="media-card-title">StepStone 動画</h3>
-              <p class="media-card-text">
-                市場見通しから詳細な解説まで、当社の専門家が複雑なプライベート・
-                マーケットのテーマをわかりやすく解説します。
-              </p>
-              <span class="media-card-link">
-                今すぐ見る
-                <svg
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M5 12h14M13 6l6 6-6 6"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </svg>
-              </span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </section> -->
   </main>
 </template>
 

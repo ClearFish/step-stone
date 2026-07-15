@@ -100,7 +100,7 @@ const routes = [
   {
     path: '/who-we-are/our-team',
     name: 'who-we-are-our-team',
-    component: PlaceholderView,
+    component: () => import('@/views/OurTeamView.vue'),
     meta: { title: 'Our Team', parent: 'Who We Are' }
   },
   {
